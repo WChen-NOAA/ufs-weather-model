@@ -6,7 +6,7 @@
 
 export TEST_DESCR="Compare global control multigases results with previous trunk version"
 
-export CNTL_DIR=control_wam
+export CNTL_DIR=control_wamphys
 
 export LIST_FILES="sfcf024.nc \
                    atmf024.nc"
@@ -19,7 +19,7 @@ export SYEAR="2021"
 export SMONTH="03"
 export SDAY="22"
 export SHOUR="06"
-export FHMAX=120
+export FHMAX=48
 
 export WARM_START=.false.
 export NA_INIT=0
@@ -32,9 +32,9 @@ export NSTF_NAME=0,0,1,0,5
 export IAER=5111
 export DO_SAT_ADJ=.true.
 
-export FV3_RUN=wam_run.IN
-export CCPP_SUITE=FV3_GFS_v16_fv3wam
-export INPUT_NML=wam.nml.IN
+export FV3_RUN=wamphys_run.IN
+export CCPP_SUITE=FV3_GFS_v16_fv3wamphys
+export INPUT_NML=wamphys.nml.IN
 export DIAG_TABLE=diag_table_wam
 export FIELD_TABLE=field_table_wam
 

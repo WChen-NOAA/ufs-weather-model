@@ -16,9 +16,9 @@
 "gfs_dyn",     "sphum",       "spfh",      "fv3_history",    "all",  .false.,  "none",  2
 "gfs_dyn",     "temp",        "tmp",       "fv3_history",    "all",  .false.,  "none",  2
 "gfs_dyn",     "liq_wat",     "clwmr",     "fv3_history",    "all",  .false.,  "none",  2
-"gfs_dyn",     "o3mr",        "o3mr",      "fv3_history",    "all",  .false.,  "none",  2
-"gfs_dyn",     "spfo2",       "spfo2",        "fv3_history",  "all",  .false.,  "none",  2
-"gfs_dyn",     "spfo",        "spfo",       "fv3_history",  "all",  .false.,  "none",  2
+"gfs_dyn",     "spo3",        "o3mr",      "fv3_history",    "all",  .false.,  "none",  2
+"gfs_dyn",     "spo2",       "spfo2",      "fv3_history",  "all",  .false.,  "none",  2
+"gfs_dyn",     "spo",        "spfo",       "fv3_history",  "all",  .false.,  "none",  2
 "gfs_dyn",     "delp",        "dpres",     "fv3_history",    "all",  .false.,  "none",  2
 "gfs_dyn",     "delz",        "delz",      "fv3_history",    "all",  .false.,  "none",  2
 "gfs_dyn",     "w",           "dzdt",      "fv3_history",    "all",  .false.,  "none",  2
