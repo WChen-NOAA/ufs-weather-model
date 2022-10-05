@@ -1,0 +1,143 @@
+###############################################################################
+#
+#  Global wam thompson test
+#
+###############################################################################
+
+export TEST_DESCR="fv3 wam p8 test"
+
+export CNTL_DIR=control_fv3wam_p8
+
+export LIST_FILES="sfcf002.nc \
+                   atmf002.nc"
+
+export_fv3
+
+export DT_ATMOS="180"
+export SYEAR="2021"
+export SMONTH="03"
+export SDAY="22"
+export SHOUR="06"
+export FHMAX=2
+export OUTPUT_FH="1 -1"
+export QUILTING=.true.
+export OUTPUT_GRID="gaussian_grid"
+export FHROT=0
+export WLCLK=30
+
+export NPZ=149
+export NPZP=150
+export WARM_START=.false.
+export MOUNTAIN=.false.
+
+export EXTERNAL_IC=.true.
+export DO_SAT_ADJ=.false.
+export NGGPS_IC=.true.
+export PSM_BC=1
+export MAKE_NH=.false.
+export NA_INIT=0
+export DNATS=0
+export NUDGE_QV=.false.
+export Z_TRACER=.false.
+export TAU=1.0
+export D2_BG_K1=0.0
+export D2_BG_K2=0.0
+export FV_SG_ADJ=-1
+export DDDMP=0.0
+export VTDM4=0.0
+export DELT_MAX=1.0
+export DO_VORT_DAMP=.false.
+export D_CON=0.0
+export AGRID_VEL_RST=.true.
+
+export FHZERO=1.0
+export FHCYC=24
+export LDIAG3D=.false.
+export QDIAG3D=.false.
+export TRANS_TRAC=.false.
+
+export IMP_PHYSICS=8
+export LTAEROSOL=.false.
+export LRADAR=.false.
+export TTENDLIM=-999
+export SEDI_SEMI=.true.
+export DECFL=10
+export EXT_DIAG_THOMPSON=.false.
+
+export IAER=1011
+export ICLIQ_SW=2
+export IOVR=3
+export HYBEDMF=.false.
+export SATMEDMF=.true.
+export LHEATSTRG=.false.
+export IMFSHALCNV=2
+export IMFDEEPCNV=2
+
+#LSM
+export NSTF_NAME=2,0,0,0,0
+
+export IALB=2
+export IEMS=2
+export LSM=2
+export IOPT_DVEG=4
+export IOPT_CRS=2
+export IOPT_SFC=3
+export IOPT_RAD=3
+export IOPT_ALB=1
+export IOPT_STC=3
+export IOPT_TRS=2
+
+#UGWP
+export GWD_OPT=2
+export DO_UGWP_V1=.false.
+#export KNOB_UGWP_VERSION=0
+export KNOB_UGWP_NSLOPE=1
+export DO_UGWP_V0=.true.
+export DO_GSL_DRAG_LS_BL=.false.
+export DO_GSL_DRAG_SS=.true.
+export DO_GSL_DRAG_TOFD=.false.
+export DO_UGWP_V1_OROG_ONLY=.false.
+export DO_UGWP_V0_NST_ONLY=.false.
+export LDIAG_UGWP=.false.
+export DO_TOFD=.true.
+
+#  CA
+export DO_CA=.true.
+export CA_SGS=.true.
+export CA_GLOBAL=.false.
+export NCA=1
+export NCELLS=5
+export NLIVES=12
+export NTHRESH=18
+export NSEED=1
+export NFRACSEED=0.5
+export CA_TRIGGER=.true.
+export NSPINUP=1
+export ISEED_CA=12345
+
+export TILEDFIX=.true.
+export FNALBC="'C96.snowfree_albedo.tileX.nc'"
+export FNALBC2="'C96.facsf.tileX.nc'"
+export FNTG3C="'C96.substrate_temperature.tileX.nc'"
+export FNVEGC="'C96.vegetation_greenness.tileX.nc'"
+export FNVETC="'C96.vegetation_type.tileX.nc'"
+export FNSOTC="'C96.soil_type.tileX.nc'"
+export FNSMCC=${FNSMCC_control}
+export FNMSKH=${FNMSKH_control}
+export FNVMNC="'C96.vegetation_greenness.tileX.nc'"
+export FNVMXC="'C96.vegetation_greenness.tileX.nc'"
+export FNSLPC="'C96.slope_type.tileX.nc'"
+export FNABSC="'C96.maximum_snow_albedo.tileX.nc'"
+export LANDICE=".false."
+export FSICL=0
+export FSICS=0
+
+export OZ_PHYS_OLD=.false.
+export OZ_PHYS_NEW=.true.
+export H2O_PHYS=.true.
+
+export FV3_RUN=fv3wamphys_run.IN
+export CCPP_SUITE=FV3_GFS_v17_fv3wamphys
+export INPUT_NML=fv3wamphys.nml.IN
+export DIAG_TABLE=diag_table_fv3wam_thompson
+export FIELD_TABLE=field_table_wam_thompson_noaer
