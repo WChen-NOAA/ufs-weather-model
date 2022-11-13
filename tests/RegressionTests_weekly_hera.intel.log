@@ -1,14 +1,16 @@
-Mon Oct 31 21:39:50 EDT 2022
+Tue Nov  8 23:32:02 EST 2022
 Start Regression test
 
-Compile 001 elapsed time 336 seconds. -DAPP=ATM -DCCPP_SUITES=FV3_GFS_v16_fv3wamphys -D32BIT=ON -DMULTI_GASES=ON -DREPRO=ON -DMPI=ON -DCMAKE_BUILD_TYPE=Release
+Compile 001 elapsed time 327 seconds. -DAPP=ATM -DCCPP_SUITES=FV3_GFS_v16_fv3wamphys -D32BIT=ON -DMULTI_GASES=ON -DREPRO=ON -DMPI=ON -DCMAKE_BUILD_TYPE=Release
+Test 001 control_wamphys FAIL
 
-  0: The total amount of wall time                        = 1763.397544
-  0: The maximum resident set size (KB)                   = 561128
+
+  0: The total amount of wall time                        = 1804.159891
+  0: The maximum resident set size (KB)                   = 561900
 
 Test 001 control_wamphys RUN_SUCCESS
 
 
 REGRESSION TEST WAS SUCCESSFUL
-Mon Oct 31 22:18:15 EDT 2022
-Elapsed time: 00h:38m:26s. Have a nice day!
+Wed Nov  9 00:11:23 EST 2022
+Elapsed time: 00h:39m:21s. Have a nice day!
