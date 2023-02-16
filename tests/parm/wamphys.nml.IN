@@ -42,7 +42,7 @@
        reset_eta = .false.
        n_sponge = -1
        nudge_qv = .false.
-       tau = 1.0
+       tau = 0.0
        rf_cutoff = 1.e0
        d2_bg_k1 = 0.0
        d2_bg_k2 = 0.0

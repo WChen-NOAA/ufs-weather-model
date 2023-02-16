@@ -1,14 +1,26 @@
-Wed Nov 23 15:39:47 UTC 2022
+Wed Feb 15 21:19:39 UTC 2023
 Start Regression test
 
-Compile 001 elapsed time 327 seconds. -DAPP=ATM -DCCPP_SUITES=FV3_GFS_v16_fv3wamphys -D32BIT=ON -DMULTI_GASES=ON -DREPRO=ON -DMPI=ON -DCMAKE_BUILD_TYPE=Release
+Compile 001 elapsed time 330 seconds. -DAPP=ATM -DCCPP_SUITES=FV3_GFS_v16_fv3wamphys,FV3_GFS_v17_fv3wamphys,FV3_GFS_v17_fv3wam,FV3_GFS_v16_fv3wam -D32BIT=ON -DMULTI_GASES=ON -DREPRO=ON -DMPI=ON -DCMAKE_BUILD_TYPE=Release
 
-  0: The total amount of wall time                        = 547.933951
-  0: The maximum resident set size (KB)                   = 564616
+  0: The total amount of wall time                        = 534.419255
+  0: The maximum resident set size (KB)                   = 592336
 
 Test 001 control_wamphys RUN_SUCCESS
 
 
+  0: The total amount of wall time                        = 61.080835
+  0: The maximum resident set size (KB)                   = 872480
+
+Test 002 control_fv3wam_p8 RUN_SUCCESS
+
+
+  0: The total amount of wall time                        = 71.073456
+  0: The maximum resident set size (KB)                   = 880128
+
+Test 003 control_fv3wamphys_p8 RUN_SUCCESS
+
+
 REGRESSION TEST WAS SUCCESSFUL
-Wed Nov 23 23:08:14 UTC 2022
-Elapsed time: 07h:28m:31s. Have a nice day!
+Wed Feb 15 21:47:30 UTC 2023
+Elapsed time: 00h:27m:52s. Have a nice day!
