@@ -61,7 +61,7 @@
        nwat = 6
        na_init = 0
        d_ext = 0.0
-       dnats = 0
+       dnats = 1 
        fv_sg_adj = -1
        d2_bg = 0.
        nord =  1
