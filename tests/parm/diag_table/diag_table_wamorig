@@ -1,5 +1,6 @@
 20210322.06Z.C96.64bit.non-mono
 2021 03 22 06 0 0
+
 "fv3_history",    0,  "hours",  1,  "hours",  "time"
 "fv3_history2d",  0,  "hours",  1,  "hours",  "time"
 
@@ -16,8 +17,9 @@
 "gfs_dyn",     "temp",        "tmp",       "fv3_history",    "all",  .false.,  "none",  2
 "gfs_dyn",     "liq_wat",     "clwmr",     "fv3_history",    "all",  .false.,  "none",  2
 "gfs_dyn",     "spo3",        "o3mr",      "fv3_history",    "all",  .false.,  "none",  2
-"gfs_dyn",     "spo2",       "spfo2",        "fv3_history",  "all",  .false.,  "none",  2
+"gfs_dyn",     "spo2",       "spfo2",      "fv3_history",  "all",  .false.,  "none",  2
 "gfs_dyn",     "spo",        "spfo",       "fv3_history",  "all",  .false.,  "none",  2
+"gfs_dyn",     "tr_kappa",    "t_rkappa",  "fv3_history",  "all",  .false.,  "none",  2
 "gfs_dyn",     "delp",        "dpres",     "fv3_history",    "all",  .false.,  "none",  2
 "gfs_dyn",     "delz",        "delz",      "fv3_history",    "all",  .false.,  "none",  2
 "gfs_dyn",     "w",           "dzdt",      "fv3_history",    "all",  .false.,  "none",  2
@@ -173,18 +175,7 @@
 "gfs_phys",    "nbdsf_ave",    "nbdsf_ave",     "fv3_history2d",  "all",  .false.,  "none",  2
 "gfs_phys",    "nddsf_ave",    "nddsf_ave",     "fv3_history2d",  "all",  .false.,  "none",  2
 "gfs_phys",    "trans_ave",    "trans_ave",     "fv3_history2d",  "all",  .false.,  "none",  2
-"gfs_phys", "dtend_temp_wamphys", "dtend_temp_wamphys", "fv3_history", "all", .false., "none", 2
-"gfs_phys", "dtend_u_wamphys",    "dtend_u_wamphys",    "fv3_history", "all", .false., "none", 2
-"gfs_phys", "dtend_v_wamphys",    "dtend_v_wamphys",    "fv3_history", "all", .false., "none", 2
-"gfs_phys", "dtend_o1_wamphys",   "dtend_o1_wamphys",   "fv3_history", "all", .false., "none", 2
-"gfs_phys", "dtend_o2_wamphys",   "dtend_o2_wamphys",   "fv3_history", "all", .false., "none", 2
-"gfs_phys", "dtend_temp_wammd",   "dtend_temp_wammd",   "fv3_history", "all", .false., "none", 2
-"gfs_phys", "dtend_u_wammd",      "dtend_u_wammd",      "fv3_history", "all", .false., "none", 2
-"gfs_phys", "dtend_v_wammd",      "dtend_v_wammd",      "fv3_history", "all", .false., "none", 2
-"gfs_phys", "dtend_temp_wamion",  "dtend_temp_wamion",  "fv3_history", "all", .false., "none", 2
-"gfs_phys", "dtend_u_wamion",     "dtend_u_wamion",     "fv3_history", "all", .false., "none", 2
-"gfs_phys", "dtend_v_wamion",     "dtend_v_wamion",     "fv3_history", "all", .false., "none", 2
-"gfs_phys", "dtend_temp_wamrad",  "dtend_temp_wamrad",  "fv3_history", "all", .false., "none", 2
+
 #=============================================================================================
 #
 #====> This file can be used with diag_manager/v2.0a (or higher) <====
