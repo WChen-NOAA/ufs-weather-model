@@ -252,10 +252,10 @@ elif [[ $MACHINE_ID = hera.* ]]; then
   module load ecflow
   ECFLOW_START=ecflow_start.sh
 
-  QUEUE=batch
-  COMPILE_QUEUE=batch
+  QUEUE=debug
+  COMPILE_QUEUE=debug
 
-  #ACCNR="${ACCNR:-fv3-cpu}
+  ACCNR=${ACCNR:-fv3-cpu}
   PARTITION=
   dprefix=/scratch1/NCEPDEV
   DISKNM=$dprefix/nems/emc.nemspara/RT
@@ -279,8 +279,8 @@ elif [[ $MACHINE_ID = orion.* ]]; then
   ECFLOW_START=/work/noaa/nems/emc.nemspara/soft/miniconda3/bin/ecflow_start.sh
   ECF_PORT=$(( $(id -u) + 1500 ))
 
-  QUEUE=batch
-  COMPILE_QUEUE=batch
+  QUEUE=debug
+  COMPILE_QUEUE=debug
   PARTITION=orion
   dprefix=/work/noaa/stmp/${USER}
   DISKNM=/work/noaa/nems/emc.nemspara/RT
@@ -304,8 +304,8 @@ elif [[ $MACHINE_ID = jet.* ]]; then
   module load ecflow
   ECFLOW_START=/apps/ecflow/5.5.3/bin/ecflow_start.sh
 
-  QUEUE=batch
-  COMPILE_QUEUE=batch
+  QUEUE=debug
+  COMPILE_QUEUE=debug
   ACCNR="${ACCNR:-h-nems}"
   PARTITION=xjet
   DISKNM=/lfs4/HFIP/h-nems/emc.nemspara/RT
@@ -552,20 +552,20 @@ if [[ $ROCOTO == true ]]; then
     COMPILE_QUEUE=dev
     ROCOTO_SCHEDULER=pbs
   elif [[ $MACHINE_ID = hera.* ]]; then
-    QUEUE=batch
-    COMPILE_QUEUE=batch
+    QUEUE=debug
+    COMPILE_QUEUE=debug
     ROCOTO_SCHEDULER=slurm
   elif [[ $MACHINE_ID = orion.* ]]; then
-    QUEUE=batch
-    COMPILE_QUEUE=batch
+    QUEUE=debug
+    COMPILE_QUEUE=debug
     ROCOTO_SCHEDULER=slurm
   elif [[ $MACHINE_ID = s4.* ]]; then
     QUEUE=s4
     COMPILE_QUEUE=s4
     ROCOTO_SCHEDULER=slurm
   elif [[ $MACHINE_ID = jet.* ]]; then
-    QUEUE=batch
-    COMPILE_QUEUE=batch
+    QUEUE=debug
+    COMPILE_QUEUE=debug
     ROCOTO_SCHEDULER=slurm
   else
     die "Rocoto is not supported on this machine $MACHINE_ID"
@@ -642,11 +642,11 @@ EOF
   elif [[ $MACHINE_ID = wcoss2 ]]; then
     QUEUE=dev
   elif [[ $MACHINE_ID = hera.* ]]; then
-    QUEUE=batch
+    QUEUE=debug
   elif [[ $MACHINE_ID = orion.* ]]; then
-    QUEUE=batch
+    QUEUE=debug
   elif [[ $MACHINE_ID = jet.* ]]; then
-    QUEUE=batch
+    QUEUE=debug
   elif [[ $MACHINE_ID = s4.* ]]; then
     QUEUE=s4
   elif [[ $MACHINE_ID = gaea.* ]]; then
