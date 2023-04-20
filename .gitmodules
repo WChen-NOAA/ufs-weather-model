@@ -2,7 +2,8 @@
   path = FV3
 #  url = https://github.com/SvetlanaKarol-NOAA/fv3atm
   url = https://github.com/WChen-NOAA/fv3atm
-  branch = fv3wam_v1
+#  branch = fv3wam_v1
+    branch = developonsite
 [submodule "WW3"]
   path = WW3
   url = https://github.com/NOAA-EMC/WW3
