@@ -23,6 +23,15 @@ write_fail_test() {
   exit 1
 }
 
+remove_fail_test() {
+    echo "Removing test failure flag file for ${TEST_NAME} ${TEST_NR}"
+    if [[ ${OPNREQ_TEST} == true ]] ; then
+        rm -f $PATHRT/fail_opnreq_test_${TEST_NR}
+    else
+        rm -f $PATHRT/fail_test_${TEST_NR}
+    fi
+}
+
 if [[ $# != 5 ]]; then
   echo "Usage: $0 PATHRT RUNDIR_ROOT TEST_NAME TEST_NR COMPILE_NR"
   exit 1
@@ -36,11 +45,7 @@ export COMPILE_NR=$5
 
 cd ${PATHRT}
 OPNREQ_TEST=${OPNREQ_TEST:-false}
-if [[ ${OPNREQ_TEST} == true ]]; then
-  rm -f fail_opnreq_test_${TEST_NR}
-else
-  rm -f fail_test_${TEST_NR}
-fi
+remove_fail_test
 
 [[ -e ${RUNDIR_ROOT}/run_test_${TEST_NR}.env ]] && source ${RUNDIR_ROOT}/run_test_${TEST_NR}.env
 source default_vars.sh
@@ -79,16 +84,31 @@ cd $RUNDIR
 ###############################################################################
 # Make configure and run files
 ###############################################################################
-
+MACHINE_ID=${MACHINE_ID:-false}
 # FV3 executable:
 cp ${PATHRT}/fv3_${COMPILE_NR}.exe                 fv3.exe
 
 # modulefile for FV3 prerequisites:
-cp ${PATHRT}/modules.fv3_${COMPILE_NR}             modules.fv3
-cp ${PATHTR}/modulefiles/ufs_common*               .
+mkdir -p modulefiles
+if [[ $MACHINE_ID == linux.* ]]; then
+  cp ${PATHRT}/modules.fv3_${COMPILE_NR}             ./modulefiles/modules.fv3
+else
+  cp ${PATHRT}/modules.fv3_${COMPILE_NR}.lua             ./modulefiles/modules.fv3.lua
+fi
+cp ${PATHTR}/modulefiles/ufs_common*               ./modulefiles/.
 
 # Get the shell file that loads the "module" command and purges modules:
 cp ${PATHRT}/module-setup.sh                       module-setup.sh
+
+if [[ $MACHINE_ID == wcoss2.* ]] || [[ $MACHINE_ID == acorn.* ]] ; then
+  # for compare_ncfile.py
+  module load gcc/10.3.0 python/3.8.6
+fi
+
+# load nccmp module
+if [[ $MACHINE_ID == hera.* ]] || [[ $MACHINE_ID == orion.* ]] || [[ $MACHINE_ID == gaea.* ]] || [[ $MACHINE_ID == jet.* ]] || [[ $MACHINE_ID == cheyenne.* ]]; then
+  module load nccmp
+fi
 
 SRCD="${PATHTR}"
 RUND="${RUNDIR}"
@@ -106,6 +126,8 @@ if [[ $DATM_CDEPS = 'true' ]] || [[ $FV3 = 'true' ]] || [[ $S2S = 'true' ]]; the
 fi
 
 atparse < ${PATHRT}/parm/${MODEL_CONFIGURE:-model_configure.IN} > model_configure
+
+compute_petbounds_and_tasks
 
 atparse < ${PATHRT}/parm/${NEMS_CONFIGURE:-nems.configure} > nems.configure
 
@@ -156,7 +178,7 @@ fi
 
 # diag table
 if [[ "Q${DIAG_TABLE:-}" != Q ]] ; then
-  cp ${PATHRT}/parm/diag_table/${DIAG_TABLE} diag_table
+  atparse < ${PATHRT}/parm/diag_table/${DIAG_TABLE} > diag_table
 fi
 # Field table
 if [[ "Q${FIELD_TABLE:-}" != Q ]] ; then
@@ -174,6 +196,11 @@ if [[ $FV3 == true ]]; then
   fi
 fi
 
+# AQM
+if [[ $AQM == .true. ]]; then
+  cp ${PATHRT}/parm/aqm/aqm.rc .
+fi
+
 # Field Dictionary
 cp ${PATHRT}/parm/fd_nems.yaml fd_nems.yaml
 
@@ -181,7 +208,17 @@ cp ${PATHRT}/parm/fd_nems.yaml fd_nems.yaml
 source ./fv3_run
 
 if [[ $CPLWAV == .true. ]]; then
-  atparse < ${PATHRT}/parm/ww3_multi.inp.IN > ww3_multi.inp
+  if [[ $MULTIGRID = 'true' ]]; then
+    atparse < ${PATHRT}/parm/ww3_multi.inp.IN > ww3_multi.inp
+  else
+    atparse < ${PATHRT}/parm/ww3_shel.nml.IN > ww3_shel.nml
+    cp ${PATHRT}/parm/ww3_points.list .
+  fi
+fi
+
+if [[ $CPLCHM == .true. ]]; then
+  cp ${PATHRT}/parm/gocart/*.rc .
+  atparse < ${PATHRT}/parm/gocart/AERO_HISTORY.rc.IN > AERO_HISTORY.rc
 fi
 
 if [[ $DATM_CDEPS = 'true' ]] || [[ $S2S = 'true' ]]; then
@@ -203,6 +240,11 @@ if [[ "${DIAG_TABLE_ADDITIONAL:-}Q" != Q ]] ; then
   atparse < "${PATHRT}/parm/diag_table/${DIAG_TABLE_ADDITIONAL:-}" >> diag_table
 fi
 
+# ATMAERO
+if [[ $CPLCHM == .true. ]] && [[ $S2S = 'false' ]]; then
+  atparse < ${PATHRT}/parm/diag_table/${DIAG_TABLE:-diag_table_template} > diag_table
+fi
+
 if [[ $DATM_CDEPS = 'true' ]]; then
   atparse < ${PATHRT}/parm/${DATM_IN_CONFIGURE:-datm_in} > datm_in
   atparse < ${PATHRT}/parm/${DATM_STREAM_CONFIGURE:-datm.streams.IN} > datm.streams
@@ -213,26 +255,21 @@ if [[ $DOCN_CDEPS = 'true' ]]; then
   atparse < ${PATHRT}/parm/${DOCN_STREAM_CONFIGURE:-docn.streams.IN} > docn.streams
 fi
 
+TPN=$(( TPN / THRD ))
+if (( TASKS < TPN )); then
+  TPN=${TASKS}
+fi
+NODES=$(( TASKS / TPN ))
+if (( NODES * TPN < TASKS )); then
+  NODES=$(( NODES + 1 ))
+fi
+TASKS=$(( NODES * TPN ))
+
 if [[ $SCHEDULER = 'pbs' ]]; then
-  NODES=$(( TASKS / TPN ))
-  if (( NODES * TPN < TASKS )); then
-    NODES=$(( NODES + 1 ))
-  fi
   atparse < $PATHRT/fv3_conf/fv3_qsub.IN > job_card
 elif [[ $SCHEDULER = 'slurm' ]]; then
-  NODES=$(( TASKS / TPN ))
-  if (( NODES * TPN < TASKS )); then
-    NODES=$(( NODES + 1 ))
-  fi
   atparse < $PATHRT/fv3_conf/fv3_slurm.IN > job_card
 elif [[ $SCHEDULER = 'lsf' ]]; then
-  if (( TASKS < TPN )); then
-    TPN=${TASKS}
-  fi
-  NODES=$(( TASKS / TPN ))
-  if (( NODES * TPN < TASKS )); then
-    NODES=$(( NODES + 1 ))
-  fi
   atparse < $PATHRT/fv3_conf/fv3_bsub.IN > job_card
 fi
 
@@ -244,7 +281,7 @@ if [[ $SCHEDULER = 'none' ]]; then
 
   ulimit -s unlimited
   if [[ $CI_TEST = 'true' ]]; then
-    eval ${OMP_ENV} mpiexec -n ${TASKS} ${MPI_PROC_BIND} ./fv3.exe >out 2> >(tee err >&3)
+    eval ${OMP_ENV} mpiexec -n ${TASKS} ./fv3.exe >out 2> >(tee err >&3)
   else
     mpiexec -n ${TASKS} ./fv3.exe >out 2> >(tee err >&3)
   fi
@@ -277,11 +314,16 @@ fi
 if [[ $SCHEDULER != 'none' ]]; then
   cat ${RUNDIR}/job_timestamp.txt >> ${LOG_DIR}/job_${JOB_NR}_timestamp.txt
 fi
+
+if [[ $ROCOTO = true ]]; then
+  remove_fail_test
+fi
+
 ################################################################################
 # End test
 ################################################################################
 
-echo " $( date +%s )" >> ${LOG_DIR}/job_${JOB_NR}_timestamp.txt
+echo " $( date +%s ), ${NODES}" >> ${LOG_DIR}/job_${JOB_NR}_timestamp.txt
 
 ################################################################################
 # Remove RUN_DIRs if they are no longer needed by other tests

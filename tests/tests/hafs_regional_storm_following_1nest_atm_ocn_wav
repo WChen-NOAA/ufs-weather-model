@@ -14,8 +14,8 @@ export LIST_FILES="atmf006.nc \
                    sfc.nest02.f006.nc \
                    archv.2020_238_18.a \
                    archs.2020_238_18.a \
-                   out_grd.ww3 \
-                   out_pnt.ww3"
+                   20200825.180000.out_grd.ww3 \
+                   20200825.180000.out_pnt.ww3"
 
 export_fv3
 export_hafs
@@ -24,15 +24,12 @@ export_hafs_regional
 export HAFS=true
 export FHMAX=6
 export RESTART_N=${FHMAX}
-export TASKS=300
-export THRD=2
-export TPN=$TPN_thrd
 export DT_ATMOS=180
 export IDEFLATE=1
 export NFHMAX_HF=-1
 export NFHOUT_HF=3
 export NFHOUT=3
-export OUTPUT_FILE="'netcdf_parallel' 'netcdf'"
+export OUTPUT_FILE="'netcdf' 'netcdf'"
 export SDAY=25
 export SHOUR=12
 export SMONTH=08
@@ -60,7 +57,7 @@ export DLON_2=0.1
 export DLAT_2=0.1
 
 export BLOCKSIZE=${BLOCKSIZE:-24}
-export CCPP_SUITE="FV3_HAFS_v0_gfdlmp_tedmf_nonsst"
+export CCPP_SUITE="FV3_HAFS_v1_gfdlmp_tedmf_nonsst"
 export DEFLATE_LEVEL=-1
 export INPES=6
 export JNPES=10
@@ -114,24 +111,6 @@ export CPLWAV=.true.
 export CPLWAV2ATM=.false.
 export CPL_IMP_MRG=.true.
 
-export FLD_DT="10800"
-export PNT_DT="10800"
-export GOFILETYPE=""
-export POFILETYPE=""
-export UNIPOINTS='ww3'
-export OUTPARS_WAV="WND HS T01 T02 DIR FP DP PHS PTP PDIR UST CHA USP"
-export WW3GRIDLINE="'ww3' 'no' 'no' 'CPL:native' 'no' 'no' 'no' 'no' 'no' 'no'  1  1  0.00 1.00  F"
-export WW3RSTDTHR=${FHMAX}
-export DT_2_RST="$(printf "%02d" $(( ${WW3RSTDTHR}*3600 )))"
-export RUN_BEG="${SYEAR}${SMONTH}${SDAY} $(printf "%02d" $(( ${SHOUR}  )))0000"
-export RUN_END="20200825 120000"
-export OUT_BEG=$RUN_BEG
-export OUT_END=$RUN_END
-export RST_BEG=$RUN_BEG
-export RST_2_BEG=$RUN_BEG
-export RST_END=$RUN_END
-export RST_2_END=$RUN_END
-
 # nems.configure
 export med_model=cmeps
 export CAP_DBUG_FLAG=0
@@ -146,10 +125,16 @@ export OCEAN_START_DTG=43702.50000
 export atm_model="fv3"
 export ocn_model="hycom"
 export wav_model="ww3"
-export atm_petlist_bounds="0000 0179"
-export ocn_petlist_bounds="0180 0239"
-export med_petlist_bounds="0180 0239"
-export wav_petlist_bounds="0240 0299"
+
+ATM_compute_tasks=$(( INPES*JNPES + INPES_NEST02*JNPES_NEST02 ))
+OCN_tasks=60
+WAV_tasks=60
+
+export atm_omp_num_threads=2
+export med_omp_num_threads=2
+export ocn_omp_num_threads=2
+export wav_omp_num_threads=2
+
 export coupling_interval_sec=360
 export MESH_ATM="unset"
 

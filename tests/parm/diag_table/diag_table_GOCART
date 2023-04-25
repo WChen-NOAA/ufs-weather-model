@@ -140,6 +140,13 @@
 "gfs_dyn",     "pm25",        "pm25",      "fv3_history",    "all",  .false.,  "none",  2
 "gfs_dyn",     "pm10",        "pm10",      "fv3_history",    "all",  .false.,  "none",  2
 
+"gfs_phys",  "frzr",          "frzr",        "fv3_history2d",         "all",  .false.,  "none",  2
+"gfs_phys",  "frzrb",         "frzrb",       "fv3_history2d",         "all",  .false.,  "none",  2
+"gfs_phys",  "frozr",         "frozr",       "fv3_history2d",         "all",  .false.,  "none",  2
+"gfs_phys",  "frozrb",        "frozrb",      "fv3_history2d",         "all",  .false.,  "none",  2
+"gfs_phys",  "tsnowp",        "tsnowp",      "fv3_history2d",         "all",  .false.,  "none",  2
+"gfs_phys",  "tsnowpb",       "tsnowpb",     "fv3_history2d",         "all",  .false.,  "none",  2
+"gfs_phys",  "rhonewsn",      "rhonewsn",    "fv3_history2d",         "all",  .false.,  "none",  2
 "gfs_phys",  "ALBDO_ave",     "albdo_ave",   "fv3_history2d",         "all",  .false.,  "none",  2
 "gfs_phys",  "cnvprcp_ave",   "cprat_ave",   "fv3_history2d",         "all",  .false.,  "none",  2
 "gfs_phys",  "cnvprcpb_ave",  "cpratb_ave",  "fv3_history2d",         "all",  .false.,  "none",  2
@@ -160,7 +167,7 @@
 "gfs_phys",  "hpbl",          "hpbl",        "fv3_history2d",         "all",  .false.,  "none",  2
 "gfs_phys",  "lhtfl_ave",     "lhtfl_ave",   "fv3_history2d",         "all",  .false.,  "none",  2
 "gfs_phys",  "shtfl_ave",     "shtfl_ave",   "fv3_history2d",         "all",  .false.,  "none",  2
-"gfs_phys",  "pwat",          "pwatclm",     "fv3_history2d",         "all",  .false.,  "none",  2
+"gfs_phys",  "pwat",          "pwat",        "fv3_history2d",         "all",  .false.,  "none",  2
 "gfs_phys",  "soilm",         "soilm",       "fv3_history2d",         "all",  .false.,  "none",  2
 "gfs_phys",  "TCDC_aveclm",   "tcdc_aveclm", "fv3_history2d",         "all",  .false.,  "none",  2
 "gfs_phys",  "TCDC_avebndcl", "tcdc_avebndcl",  "fv3_history2d",         "all",  .false.,  "none",  2
@@ -290,6 +297,12 @@
 "gfs_phys",    "nbdsf_ave",    "nbdsf_ave",     "fv3_history2d",  "all",  .false.,  "none",  2
 "gfs_phys",    "nddsf_ave",    "nddsf_ave",     "fv3_history2d",  "all",  .false.,  "none",  2
 "gfs_phys",    "trans_ave",    "trans_ave",     "fv3_history2d",  "all",  .false.,  "none",  2
+"gfs_phys",    "AOD_550",      "aod550",        "fv3_history2d",  "all",  .false.,  "none",  2
+"gfs_phys",    "DU_AOD_550",   "du_aod550",     "fv3_history2d",  "all",  .false.,  "none",  2
+"gfs_phys",    "SU_AOD_550",   "su_aod550",     "fv3_history2d",  "all",  .false.,  "none",  2
+"gfs_phys",    "BC_AOD_550",   "bc_aod550",     "fv3_history2d",  "all",  .false.,  "none",  2
+"gfs_phys",    "OC_AOD_550",   "oc_aod550",     "fv3_history2d",  "all",  .false.,  "none",  2
+"gfs_phys",    "SS_AOD_550",   "ss_aod550",     "fv3_history2d",  "all",  .false.,  "none",  2
 
 #=============================================================================================
 #
