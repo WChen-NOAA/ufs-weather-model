@@ -1,0 +1,30 @@
+INPUTDATA_COLD=/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/fv3wam_data_src
+inputdir_WAM=/scratch1/NCEPDEV/swpc/Svetlana.Karol/save/ufs-weather-model/INPUT_WAM_DATA
+if [ $WARM_START = .false. ]; then
+  cp -r ${INPUTDATA_COLD}/* ./
+  cp ${inputdir_WAM}/global*dat ./
+  cp ${inputdir_WAM}/global_idea_coeff_lte* ./
+  cp ${inputdir_WAM}/global_idea_ggww* ./
+  cp ${inputdir_WAM}/global_idea_h2o*  ./
+  cp ${inputdir_WAM}/swio_waminput.nc  ./
+  cp ${inputdir_WAM}/snoe_eof.nc  ./
+  cp ${inputdir_WAM}/tiros_tjr.nc ./
+  cp ${inputdir_WAM}/iondata_tjr.nc ./
+  cp ${inputdir_WAM}/wam_rm3_globcomp.nc ./
+  cp ${inputdir_WAM}/ionprof ./
+  cp ${inputdir_WAM}/tiros_spectra ./
+else
+  mkdir INPUT RESTART
+  CURRDIR=`pwd`
+  FILEDIR=${CURRDIR}/../${DEP_RUN}
+  cp -r ${FILEDIR}/RESTART/* ./INPUT
+  cp ${FILEDIR}/INPUT/grid_spec.nc INPUT/.
+  cp ${FILEDIR}/INPUT/*_grid.tile*.nc INPUT/.
+  cp ${FILEDIR}/INPUT/oro_data*.nc INPUT/.
+  cp ${INPUTDATA_COLD}/*{grb,f77,dat,txt,BIN} .
+fi
+if [ @[TILEDFIX] = .true. ]; then
+  cp ${INPUTDATA_COLD}/../TILED/*.nc ./
+  cp ${INPUTDATA_COLD}/*.nc ./
+fi
+
