@@ -1,0 +1,19 @@
+
+INPUTDATA_COLD=/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/fv3wam_data_src
+if [ $WARM_START = .false. ]; then
+  cp -r ${INPUTDATA_COLD}/* ./
+else
+  mkdir INPUT RESTART
+  CURRDIR=`pwd`
+  FILEDIR=${CURRDIR}/../${DEP_RUN}
+  cp -r ${FILEDIR}/RESTART/* ./INPUT
+  cp ${FILEDIR}/INPUT/grid_spec.nc INPUT/.
+  cp ${FILEDIR}/INPUT/*_grid.tile*.nc INPUT/.
+  cp ${FILEDIR}/INPUT/oro_data*.nc INPUT/.
+  cp ${INPUTDATA_COLD}/*{grb,f77,dat,txt,BIN} .
+fi
+if [ @[TILEDFIX] = .true. ]; then
+  cp ${INPUTDATA_COLD}/../TILED/*.nc ./
+  cp ${INPUTDATA_COLD}/*.nc ./
+fi
+
