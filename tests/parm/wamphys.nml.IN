@@ -342,10 +342,10 @@
 &wamphys_nml
      JH0=1.75, JH_tanh=0.5, JH_semiann=0.5, JH_ann=0.0,
      skeddy0=140., skeddy_semiann=60., skeddy_ann=0.,
-     tkeddy0=280., tkeddy_semiann=0., tkeddy_ann=0., f107_fix=120.,
-     f107a_fix= 120., kp_fix= 3.0, kpa_fix=3.0, gW_fix=30.,tiros_activity_fix =7.,
-     tiros_switch=0,bnhp=27.424, bnhpi=7, bshp=33.016, bshpi=7, bswbt=6.6704, bswang=213.04,
-      bswvel=450.7061, bswbz=-3.442665, bswden=6.9494, spw_drivers= 'swpc_fst', 
+     tkeddy0=280., tkeddy_semiann=0., tkeddy_ann=0., f107_fix=80.,
+     f107a_fix= 80., kp_fix= 3.0, kpa_fix=3.0, gW_fix=30.,tiros_activity_fix =7.,
+     tiros_switch=0,bnhp=21.0, bnhpi=6, bshp=21.0, bshpi=6, bswbt=0.46482, bswang=180.,
+     bswvel=460.13, bswbz=-0.46482, bswden=5.0, spw_drivers= 'swpc_fst',
       efield_model='epot', swin_drivers='swin_wam',
      do_init_tides=.false.,do_init_swio=.true., do_init_wamtracers=.true.,
      do_init_wamion=.true., do_init_wamrad=.true.
