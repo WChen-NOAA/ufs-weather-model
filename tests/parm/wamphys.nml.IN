@@ -42,7 +42,7 @@
        reset_eta = .false.
        n_sponge = -1
        nudge_qv = .false.
-       tau = 0
+       tau = 0.0 
        rf_cutoff = 1.0
        d2_bg_k1 = 0.0
        d2_bg_k2 = 0.0
@@ -50,7 +50,7 @@
        d2_bg = 0.
        nord =  1
        dddmp = 0.0
-       d4_bg = 0.20
+       d4_bg = 0.12
        vtdm4 = 0.0
        delt_max = 1.0
        ke_bg = 0.
@@ -94,6 +94,7 @@
        no_dycore = .false.
        z_tracer = .false.
        agrid_vel_rst = .true.
+       inline_q = .true.
        read_increment = .false.
        res_latlon_dynamics = "fv3_increment.nc"
 /

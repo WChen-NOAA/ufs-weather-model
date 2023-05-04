@@ -35,7 +35,7 @@ deflate_level=1
     ntiles = 6
     npz = @[NPZ]
     dz_min = @[DZ_MIN]
-    ncnst  = 12
+    ncnst  = 13
     psm_bc = @[PSM_BC]
     grid_type = -1
     make_nh = @[MAKE_NH]
@@ -96,6 +96,7 @@ deflate_level=1
     warm_start = @[WARM_START]
     no_dycore = .false.
     z_tracer = @[Z_TRACER]
+    inline_q = @[INLINE_Q]
     agrid_vel_rst = .true.
     read_increment = @[READ_INCREMENT]
     res_latlon_dynamics = "fv3_increment.nc"
@@ -388,16 +389,19 @@ deflate_level=1
      do_init_tides=.false.,do_init_swio=.true., do_init_wamtracers=.true.,
      do_init_wamion=.true., do_init_wamrad=.true.
 /
+
 &multi_gases_nml
-  ri= 295.3892,  461.50, 0., 0., 0., 0., 0., 173.2247,  519.674, 259.8370 ,0.,0.,0.
+  ri=295.3892,  461.50, 0., 0., 0., 0., 0., 173.2247,  519.674, 259.8370 ,0.,0.,0.
   cpi=1031.1083, 1846.00, 0., 0., 0., 0., 0.,  820.2391, 1299.185, 918.0969, 0.,0.,0.
 /
+
 &wamphys_tracer_cpi
   ri= 295.3892,  461.50, 0., 0., 0., 0., 0., 173.2247,  519.674, 259.8370 ,0.,0.,0.
   cpi=1031.1083, 1846.00, 0., 0., 0., 0., 0.,  820.2391, 1299.185, 918.0969,0.,0.,0.
   ntrac_wat=6
   ntrac_nml=12
 /
+
 &molecular_diffusion_nml
   tau_visc = 1.0
   tau_cond = 1.0
