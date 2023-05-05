@@ -19,7 +19,7 @@ export SYEAR="2021"
 export SMONTH="03"
 export SDAY="22"
 export SHOUR="06"
-export FHMAX=48
+export FHMAX=96
 
 export WARM_START=.false.
 export NA_INIT=0
