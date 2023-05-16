@@ -1,9 +1,9 @@
-inputdir=@[INPUTDATA_ROOT]/FV3_input_data_L149
+inputdir=FV3_input_data_L149
 FV3_FIX=@[INPUTDATA_ROOT]/FV3_fix/
-WAM_FIX=${inputdir}/FV3_input_data_wam
+WAM_FIX=@[INPUTDATA_ROOT]/${inputdir}/FV3_input_data_wam
 if [ $WARM_START = .false. ]; then
   mkdir INPUT RESTART
-  cp -r ${inputdir}/INPUT/* ./INPUT/.
+  cp -r @[INPUTDATA_ROOT]/${inputdir}/INPUT/* ./INPUT/.
   cp ${WAM_FIX}/global*dat ./
   cp ${WAM_FIX}/global_idea_coeff_lte* ./
   cp ${WAM_FIX}/global_idea_ggww* ./

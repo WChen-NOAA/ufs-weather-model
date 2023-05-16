@@ -50,7 +50,7 @@
        d2_bg = 0.
        nord =  1
        dddmp = 0.0
-       d4_bg = 0.12
+       d4_bg = 0.1
        vtdm4 = 0.0
        delt_max = 1.0
        ke_bg = 0.
