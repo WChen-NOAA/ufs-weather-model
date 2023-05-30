@@ -1,3 +1,0 @@
-# Run WAM test in REPRO mode to avoid numerical instability in the deep atmosphere
-COMPILE | -DAPP=ATM -DCCPP_SUITES=FV3_GFS_v16_fv3wamphys -D32BIT=ON -DMULTI_GASES=ON -DREPRO=ON -DDEBUG=ON                                      |                                         | fv3 |
-RUN     | control_wamphys                                                                                                             |                                         | fv3 |
