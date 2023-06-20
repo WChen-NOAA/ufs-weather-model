@@ -1,35 +1,22 @@
-Fri May 26 18:24:33 UTC 2023
+Tue Jun 20 18:17:20 UTC 2023
 Start Regression test
 
-Compile 001 elapsed time 503 seconds. -DAPP=ATM -DCCPP_SUITES=FV3_GFS_v16_fv3wamphys,FV3_GFS_v17_fv3wamphys,FV3_GFS_v17_fv3wam,FV3_GFS_v16_fv3wam -D32BIT=ON -DMULTI_GASES=ON -DREPRO=ON -DMPI=ON -DCMAKE_BUILD_TYPE=Release
+Compile 001 elapsed time 530 seconds. -DAPP=ATM -DCCPP_SUITES=FV3_GFS_v16_fv3wamphys,FV3_GFS_v17_fv3wamphys,FV3_GFS_v17_fv3wam,FV3_GFS_v16_fv3wam -D32BIT=ON -DMULTI_GASES=ON -DREPRO=ON -DMPI=ON -DCMAKE_BUILD_TYPE=Release
 
 baseline dir = /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/develop-20230512/INTEL/control_wamphys
-working dir  = /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_129866/control_fv3wamphys
+working dir  = /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_126491/control_fv3wamphys
 Checking test 001 control_fv3wamphys results ....
  Comparing sfcf024.nc ............MISSING baseline
  Comparing atmf024.nc ............MISSING baseline
 
-  0: The total amount of wall time                        = 553.978638
-  0: The maximum resident set size (KB)                   = 801772
+  0: The total amount of wall time                        = 556.610181
+  0: The maximum resident set size (KB)                   = 821904
 
 Test 001 control_fv3wamphys FAIL
 
-
-baseline dir = /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/develop-20230512/INTEL/control_fv3wam_p8
-working dir  = /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_129866/control_fv3wamphys_p8
-Checking test 002 control_fv3wamphys_p8 results ....
- Comparing sfcf024.nc ............MISSING baseline
- Comparing atmf024.nc ............MISSING baseline
-
-  0: The total amount of wall time                        = 906.707554
-  0: The maximum resident set size (KB)                   = 1683656
-
-Test 002 control_fv3wamphys_p8 FAIL
-
 FAILED TESTS: 
 Test control_fv3wamphys 001 failed in check_result failed 
-Test control_fv3wamphys_p8 002 failed in check_result failed 
 
 REGRESSION TEST FAILED
-Fri May 26 19:03:26 UTC 2023
-Elapsed time: 00h:38m:54s. Have a nice day!
+Tue Jun 20 18:38:41 UTC 2023
+Elapsed time: 00h:21m:22s. Have a nice day!
