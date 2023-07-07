@@ -20,6 +20,7 @@ export SMONTH="02"
 export SDAY="01"
 export SHOUR="00"
 export FHMAX=2
+export OUTPUT_FH='1 -1'
 
 export WARM_START=.false.
 export NA_INIT=0

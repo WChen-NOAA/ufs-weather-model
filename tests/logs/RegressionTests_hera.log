@@ -1,0 +1,35 @@
+Fri Jul  7 18:32:51 UTC 2023
+Start Regression test
+
+Testing UFSWM Hash: b17ff5d94e930274a001d855225e09c6ed4ddc97
+Testing With Submodule Hashes:
+ 37cbb7d6840ae7515a9a8f0dfd4d89461b3396d1 ../AQM (v0.2.0-37-g37cbb7d)
+ 94acf25b8692e38b3c8314125278cdc2700fb869 ../CDEPS-interface/CDEPS (cdeps0.4.15-15-g94acf25)
+ 5840cd1931e2e32b9dfded0c19049d0f1ec3d04c ../CICE-interface/CICE (CICE6.0.0-440-g5840cd1)
+ fe2c15820c27808260c313fa5caa0ae69e987dae ../CMEPS-interface/CMEPS (cmeps_v0.4.1-1400-gfe2c158)
+ cabd7753ae17f7bfcc6dad56daf10868aa51c3f4 ../CMakeModules (v1.0.0-28-gcabd775)
+ 8009f4cbd4c2a78a3be025508232d3dfe05125da ../FV3 (heads/wam2c)
+ e2245c26e6c4931eadfbb479676a1851cd40b6eb ../GOCART (rt-v5_29_1_BPL91_1-exRT4-567-ge2245c2)
+ 24437531dcf8580aadaf6ebeb9de544ccfc674f9 ../HYCOM-interface/HYCOM (2.3.00-120-g2443753)
+ 520a4d1b09b944b2e77eea9d13433cd488edbd16 ../MOM6-interface/MOM6 (dev/master/repository_split_2014.10.10-9473-g520a4d1b0)
+ e1260f1ee711f66a1141010d13511a69c0f8637b ../NOAHMP-interface/noahmp (v3.7.1-292-ge1260f1)
+ c4b116886b5ef9af5fb4942d7161074df3402732 ../WW3 (6.07.1-325-gc4b11688)
+ 9e5c1b2a40ff468d85c7e9baa3eca1e610ea6d9c ../stochastic_physics (ufs-v2.0.0-173-g9e5c1b2)
+Compile 018 elapsed time 185 seconds. -DAPP=ATM -DCCPP_SUITES=FV3_GFS_v16_fv3wamphys,FV3_GFS_v17_fv3wamphys -D32BIT=ON -DMULTI_GASES=ON -DDEBUG=ON -DMPI=ON -DCMAKE_BUILD_TYPE=Debug
+
+baseline dir = /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/develop-20230623/control_fv3wam_p8_intel
+working dir  = /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_288243/control_fv3wamphys_p8_debug_intel
+Checking test 001 control_fv3wamphys_p8_debug_intel results ....
+Moving baseline 001 control_fv3wamphys_p8_debug_intel files ....
+ Moving sfcf002.nc .........OK
+ Moving atmf002.nc .........OK
+
+  0: The total amount of wall time                        = 1235.338440
+  0: The maximum resident set size (KB)                   = 1707060
+
+Test 001 control_fv3wamphys_p8_debug_intel PASS
+
+
+REGRESSION TEST WAS SUCCESSFUL
+Fri Jul  7 19:00:31 UTC 2023
+Elapsed time: 00h:27m:43s. Have a nice day!
