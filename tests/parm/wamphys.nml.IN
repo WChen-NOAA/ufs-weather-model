@@ -42,6 +42,7 @@
        reset_eta = .false.
        n_sponge = -1
        nudge_qv = .false.
+       nudge_dz = .false.
        tau = 0.0 
        rf_cutoff = 1.0
        d2_bg_k1 = 0.0
@@ -127,7 +128,6 @@
        qdiag3d        = .true.
        print_diff_pgr = .false.
        fhcyc          = 24
-       nst_anl        = .true.
        use_ufo        = .true.
        pre_rad        = .false.
        imp_physics    = 11
@@ -165,7 +165,7 @@
        ivegsrc        = 1
        isot           = 1
        lsm            = 1
-       iopt_dveg      = 2
+       iopt_dveg      = 1 
        iopt_crs       = 1
        iopt_btr       = 1
        iopt_run       = 1
@@ -177,15 +177,21 @@
        iopt_snf       = 4
        iopt_tbot      = 2
        iopt_stc       = 1
+       iopt_trs       = 2
        debug          = .true.
        levr           = 89
        h2o_phys       = .true.
        nstf_name      = 0,0,1,0,5
+       nst_anl        = .true.
+       psautco        = 0.0008,0.0005
+       prautco        = 0.00015,0.00015
+       lgfdlmprad     = .true.
        oz_phys        = .false.
        oz_phys_2015   = .true.
        cplflx         = .false.
        cplwav         = .false.
        cplwav2atm     = .false.
+       effr_in        = .true.
        iau_inc_files  = ''
        do_sppt        = .false.
        do_shum        = .false.
