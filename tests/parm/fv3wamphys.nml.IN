@@ -113,8 +113,8 @@ deflate_level=1
 &gfs_physics_nml
     fhzero       = @[FHZERO]
     h2o_phys     = .true.
-    ldiag3d      = @[LDIAG3D]
-    qdiag3d      = @[QDIAG3D]
+    ldiag3d      = .true. 
+    qdiag3d      = .true.
     print_diff_pgr= .false.
     fhcyc        = @[FHCYC]
     use_ufo      = .true.
