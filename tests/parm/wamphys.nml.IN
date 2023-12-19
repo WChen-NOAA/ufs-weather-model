@@ -86,6 +86,7 @@
        hord_dp =  6
        hord_tr = 8
        adjust_dry_mass = .false.
+       gmao_remap = 0
        do_sat_adj = .true.
        consv_am = .false.
        fill = .true.

@@ -88,6 +88,7 @@ deflate_level=1
     hord_tr = 8
     adjust_dry_mass = .false.
     consv_te = 0.
+    gmao_remap = 0
     do_sat_adj = @[DO_SAT_ADJ]
     consv_am = .false.
     fill = .true.
