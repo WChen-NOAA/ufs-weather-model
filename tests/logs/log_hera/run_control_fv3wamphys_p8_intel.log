@@ -1,35 +1,35 @@
-+ echo PID=293226
-PID=293226
++ echo PID=4193
+PID=4193
 + SECONDS=0
 + trap '[ "$?" -eq 0 ] || write_fail_test' EXIT
 + trap 'echo "run_test.sh interrupted PID=$$"; cleanup' INT
 + trap 'echo "run_test.sh terminated PID=$$";  cleanup' TERM
 + [[ 5 != 5 ]]
-+ export PATHRT=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests
-+ PATHRT=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests
-+ export RUNDIR_ROOT=/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_200479
-+ RUNDIR_ROOT=/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_200479
-+ export TEST_NAME=control_p8
-+ TEST_NAME=control_p8
++ export PATHRT=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests
++ PATHRT=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests
++ export RUNDIR_ROOT=/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_159380
++ RUNDIR_ROOT=/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_159380
++ export TEST_NAME=control_fv3wamphys_p8
++ TEST_NAME=control_fv3wamphys_p8
 + export TEST_NR=001
 + TEST_NR=001
-+ export COMPILE_NR=atm_dyn32_intel
-+ COMPILE_NR=atm_dyn32_intel
-+ echo 'PATHRT: /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests'
-PATHRT: /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests
-+ echo 'RUNDIR_ROOT: /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_200479'
-RUNDIR_ROOT: /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_200479
-+ echo 'TEST_NAME: control_p8'
-TEST_NAME: control_p8
++ export COMPILE_NR=wam_intel
++ COMPILE_NR=wam_intel
++ echo 'PATHRT: /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests'
+PATHRT: /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests
++ echo 'RUNDIR_ROOT: /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_159380'
+RUNDIR_ROOT: /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_159380
++ echo 'TEST_NAME: control_fv3wamphys_p8'
+TEST_NAME: control_fv3wamphys_p8
 + echo 'TEST_NR: 001'
 TEST_NR: 001
-+ echo 'COMPILE_NR: atm_dyn32_intel'
-COMPILE_NR: atm_dyn32_intel
-+ cd /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests
++ echo 'COMPILE_NR: wam_intel'
+COMPILE_NR: wam_intel
++ cd /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests
 + unset MODEL_CONFIGURE
 + unset NEMS_CONFIGURE
-+ [[ -e /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_200479/run_test_001.env ]]
-+ source /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_200479/run_test_001.env
++ [[ -e /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_159380/run_test_001.env ]]
++ source /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_159380/run_test_001.env
 ++ export JOB_NR=002
 ++ JOB_NR=002
 ++ export MACHINE_ID=hera
@@ -38,16 +38,16 @@ COMPILE_NR: atm_dyn32_intel
 ++ RT_COMPILER=intel
 ++ export RTPWD=/scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/develop-20230726
 ++ RTPWD=/scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/develop-20230726
-++ export INPUTDATA_ROOT=/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM
-++ INPUTDATA_ROOT=/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM
-++ export INPUTDATA_ROOT_WW3=/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/WW3_input_data_20220624
-++ INPUTDATA_ROOT_WW3=/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/WW3_input_data_20220624
+++ export INPUTDATA_ROOT=/scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101
+++ INPUTDATA_ROOT=/scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101
+++ export INPUTDATA_ROOT_WW3=/scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/WW3_input_data_20220624
+++ INPUTDATA_ROOT_WW3=/scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/WW3_input_data_20220624
 ++ export INPUTDATA_ROOT_BMIC=/scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/BM_IC-20220207
 ++ INPUTDATA_ROOT_BMIC=/scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/BM_IC-20220207
-++ export PATHRT=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests
-++ PATHRT=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests
-++ export PATHTR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3
-++ PATHTR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3
+++ export PATHRT=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests
+++ PATHRT=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests
+++ export PATHTR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev
+++ PATHTR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev
 ++ export NEW_BASELINE=/scratch1/NCEPDEV/stmp4/Wen.Chen/FV3_RT/REGRESSION_TEST
 ++ NEW_BASELINE=/scratch1/NCEPDEV/stmp4/Wen.Chen/FV3_RT/REGRESSION_TEST
 ++ export CREATE_BASELINE=false
@@ -68,14 +68,14 @@ COMPILE_NR: atm_dyn32_intel
 ++ ROCOTO=false
 ++ export ECFLOW=false
 ++ ECFLOW=false
-++ export REGRESSIONTEST_LOG=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests/logs/RegressionTests_hera.log
-++ REGRESSIONTEST_LOG=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests/logs/RegressionTests_hera.log
-++ export LOG_DIR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests/logs/log_hera
-++ LOG_DIR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests/logs/log_hera
+++ export REGRESSIONTEST_LOG=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/logs/RegressionTests_weekly_hera.log
+++ REGRESSIONTEST_LOG=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/logs/RegressionTests_weekly_hera.log
+++ export LOG_DIR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/logs/log_hera
+++ LOG_DIR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/logs/log_hera
 ++ export DEP_RUN=
 ++ DEP_RUN=
-++ export skip_check_results=false
-++ skip_check_results=false
+++ export skip_check_results=true
+++ skip_check_results=true
 ++ export delete_rundir=false
 ++ delete_rundir=false
 ++ export WLCLK=30
@@ -200,8 +200,8 @@ COMPILE_NR: atm_dyn32_intel
 ++ WLCLK=30
 ++ export CMP_DATAONLY=false
 ++ CMP_DATAONLY=false
-+ [[ -e /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_200479/run_test_001.env ]]
-+ source /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_200479/run_test_001.env
++ [[ -e /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_159380/run_test_001.env ]]
++ source /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_159380/run_test_001.env
 ++ export JOB_NR=002
 ++ JOB_NR=002
 ++ export MACHINE_ID=hera
@@ -210,16 +210,16 @@ COMPILE_NR: atm_dyn32_intel
 ++ RT_COMPILER=intel
 ++ export RTPWD=/scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/develop-20230726
 ++ RTPWD=/scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/develop-20230726
-++ export INPUTDATA_ROOT=/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM
-++ INPUTDATA_ROOT=/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM
-++ export INPUTDATA_ROOT_WW3=/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/WW3_input_data_20220624
-++ INPUTDATA_ROOT_WW3=/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/WW3_input_data_20220624
+++ export INPUTDATA_ROOT=/scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101
+++ INPUTDATA_ROOT=/scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101
+++ export INPUTDATA_ROOT_WW3=/scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/WW3_input_data_20220624
+++ INPUTDATA_ROOT_WW3=/scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/WW3_input_data_20220624
 ++ export INPUTDATA_ROOT_BMIC=/scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/BM_IC-20220207
 ++ INPUTDATA_ROOT_BMIC=/scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/BM_IC-20220207
-++ export PATHRT=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests
-++ PATHRT=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests
-++ export PATHTR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3
-++ PATHTR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3
+++ export PATHRT=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests
+++ PATHRT=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests
+++ export PATHTR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev
+++ PATHTR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev
 ++ export NEW_BASELINE=/scratch1/NCEPDEV/stmp4/Wen.Chen/FV3_RT/REGRESSION_TEST
 ++ NEW_BASELINE=/scratch1/NCEPDEV/stmp4/Wen.Chen/FV3_RT/REGRESSION_TEST
 ++ export CREATE_BASELINE=false
@@ -240,25 +240,25 @@ COMPILE_NR: atm_dyn32_intel
 ++ ROCOTO=false
 ++ export ECFLOW=false
 ++ ECFLOW=false
-++ export REGRESSIONTEST_LOG=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests/logs/RegressionTests_hera.log
-++ REGRESSIONTEST_LOG=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests/logs/RegressionTests_hera.log
-++ export LOG_DIR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests/logs/log_hera
-++ LOG_DIR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests/logs/log_hera
+++ export REGRESSIONTEST_LOG=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/logs/RegressionTests_weekly_hera.log
+++ REGRESSIONTEST_LOG=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/logs/RegressionTests_weekly_hera.log
+++ export LOG_DIR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/logs/log_hera
+++ LOG_DIR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/logs/log_hera
 ++ export DEP_RUN=
 ++ DEP_RUN=
-++ export skip_check_results=false
-++ skip_check_results=false
+++ export skip_check_results=true
+++ skip_check_results=true
 ++ export delete_rundir=false
 ++ delete_rundir=false
 ++ export WLCLK=30
 ++ WLCLK=30
-+ source tests/control_p8
-++ export 'TEST_DESCR=Compare global control results with previous trunk version'
-++ TEST_DESCR='Compare global control results with previous trunk version'
-++ export CNTL_DIR=control_p8
-++ CNTL_DIR=control_p8
-++ export 'LIST_FILES=sfcf000.nc                    sfcf021.nc                    sfcf024.nc                    atmf000.nc                    atmf021.nc                    atmf024.nc                    GFSFLX.GrbF00                    GFSFLX.GrbF21                    GFSFLX.GrbF24                    GFSPRS.GrbF00                    GFSPRS.GrbF21                    GFSPRS.GrbF24                    RESTART/20210323.060000.coupler.res                    RESTART/20210323.060000.fv_core.res.nc                    RESTART/20210323.060000.fv_core.res.tile1.nc                    RESTART/20210323.060000.fv_core.res.tile2.nc                    RESTART/20210323.060000.fv_core.res.tile3.nc                    RESTART/20210323.060000.fv_core.res.tile4.nc                    RESTART/20210323.060000.fv_core.res.tile5.nc                    RESTART/20210323.060000.fv_core.res.tile6.nc                    RESTART/20210323.060000.fv_srf_wnd.res.tile1.nc                    RESTART/20210323.060000.fv_srf_wnd.res.tile2.nc                    RESTART/20210323.060000.fv_srf_wnd.res.tile3.nc                    RESTART/20210323.060000.fv_srf_wnd.res.tile4.nc                    RESTART/20210323.060000.fv_srf_wnd.res.tile5.nc                    RESTART/20210323.060000.fv_srf_wnd.res.tile6.nc                    RESTART/20210323.060000.fv_tracer.res.tile1.nc                    RESTART/20210323.060000.fv_tracer.res.tile2.nc                    RESTART/20210323.060000.fv_tracer.res.tile3.nc                    RESTART/20210323.060000.fv_tracer.res.tile4.nc                    RESTART/20210323.060000.fv_tracer.res.tile5.nc                    RESTART/20210323.060000.fv_tracer.res.tile6.nc                    RESTART/20210323.060000.phy_data.tile1.nc                    RESTART/20210323.060000.phy_data.tile2.nc                    RESTART/20210323.060000.phy_data.tile3.nc                    RESTART/20210323.060000.phy_data.tile4.nc                    RESTART/20210323.060000.phy_data.tile5.nc                    RESTART/20210323.060000.phy_data.tile6.nc                    RESTART/20210323.060000.sfc_data.tile1.nc                    RESTART/20210323.060000.sfc_data.tile2.nc                    RESTART/20210323.060000.sfc_data.tile3.nc                    RESTART/20210323.060000.sfc_data.tile4.nc                    RESTART/20210323.060000.sfc_data.tile5.nc                    RESTART/20210323.060000.sfc_data.tile6.nc'
-++ LIST_FILES='sfcf000.nc                    sfcf021.nc                    sfcf024.nc                    atmf000.nc                    atmf021.nc                    atmf024.nc                    GFSFLX.GrbF00                    GFSFLX.GrbF21                    GFSFLX.GrbF24                    GFSPRS.GrbF00                    GFSPRS.GrbF21                    GFSPRS.GrbF24                    RESTART/20210323.060000.coupler.res                    RESTART/20210323.060000.fv_core.res.nc                    RESTART/20210323.060000.fv_core.res.tile1.nc                    RESTART/20210323.060000.fv_core.res.tile2.nc                    RESTART/20210323.060000.fv_core.res.tile3.nc                    RESTART/20210323.060000.fv_core.res.tile4.nc                    RESTART/20210323.060000.fv_core.res.tile5.nc                    RESTART/20210323.060000.fv_core.res.tile6.nc                    RESTART/20210323.060000.fv_srf_wnd.res.tile1.nc                    RESTART/20210323.060000.fv_srf_wnd.res.tile2.nc                    RESTART/20210323.060000.fv_srf_wnd.res.tile3.nc                    RESTART/20210323.060000.fv_srf_wnd.res.tile4.nc                    RESTART/20210323.060000.fv_srf_wnd.res.tile5.nc                    RESTART/20210323.060000.fv_srf_wnd.res.tile6.nc                    RESTART/20210323.060000.fv_tracer.res.tile1.nc                    RESTART/20210323.060000.fv_tracer.res.tile2.nc                    RESTART/20210323.060000.fv_tracer.res.tile3.nc                    RESTART/20210323.060000.fv_tracer.res.tile4.nc                    RESTART/20210323.060000.fv_tracer.res.tile5.nc                    RESTART/20210323.060000.fv_tracer.res.tile6.nc                    RESTART/20210323.060000.phy_data.tile1.nc                    RESTART/20210323.060000.phy_data.tile2.nc                    RESTART/20210323.060000.phy_data.tile3.nc                    RESTART/20210323.060000.phy_data.tile4.nc                    RESTART/20210323.060000.phy_data.tile5.nc                    RESTART/20210323.060000.phy_data.tile6.nc                    RESTART/20210323.060000.sfc_data.tile1.nc                    RESTART/20210323.060000.sfc_data.tile2.nc                    RESTART/20210323.060000.sfc_data.tile3.nc                    RESTART/20210323.060000.sfc_data.tile4.nc                    RESTART/20210323.060000.sfc_data.tile5.nc                    RESTART/20210323.060000.sfc_data.tile6.nc'
++ source tests/control_fv3wamphys_p8
+++ export 'TEST_DESCR=fv3 wam p8 test'
+++ TEST_DESCR='fv3 wam p8 test'
+++ export CNTL_DIR=control_fv3wam_p8
+++ CNTL_DIR=control_fv3wam_p8
+++ export 'LIST_FILES=sfcf024.nc                    atmf024.nc'
+++ LIST_FILES='sfcf024.nc                    atmf024.nc'
 ++ export_fv3
 ++ export NEMS_CONFIGURE=nems.configure.atm.IN
 ++ NEMS_CONFIGURE=nems.configure.atm.IN
@@ -760,30 +760,32 @@ COMPILE_NR: atm_dyn32_intel
 ++ PRINT_DIFF_PGR=.false.
 ++ export coupling_interval_fast_sec=0
 ++ coupling_interval_fast_sec=0
-++ export NPZ=127
-++ NPZ=127
-++ export NPZP=128
-++ NPZP=128
-++ export DT_ATMOS=720
-++ DT_ATMOS=720
-++ export DT_INNER=720
-++ DT_INNER=720
-++ export SYEAR=2021
-++ SYEAR=2021
-++ export SMONTH=03
-++ SMONTH=03
-++ export SDAY=22
-++ SDAY=22
-++ export SHOUR=06
-++ SHOUR=06
-++ export 'RESTART_INTERVAL=12 -1'
-++ RESTART_INTERVAL='12 -1'
+++ export NPZ=149
+++ NPZ=149
+++ export NPZP=150
+++ NPZP=150
+++ export DT_ATMOS=180
+++ DT_ATMOS=180
+++ export DT_INNER=180
+++ DT_INNER=180
+++ export SYEAR=2018
+++ SYEAR=2018
+++ export SMONTH=2
+++ SMONTH=2
+++ export SDAY=1
+++ SDAY=1
+++ export SHOUR=0
+++ SHOUR=0
+++ export FHMAX=24
+++ FHMAX=24
 ++ export OUTPUT_GRID=gaussian_grid
 ++ OUTPUT_GRID=gaussian_grid
-++ export WRITE_DOPOST=.true.
-++ WRITE_DOPOST=.true.
-++ export 'OUTPUT_FH=0 21 24'
-++ OUTPUT_FH='0 21 24'
+++ export FHROT=0
+++ FHROT=0
+++ export WLCLK=30
+++ WLCLK=30
+++ export 'OUTPUT_FH=24 -1'
+++ OUTPUT_FH='24 -1'
 ++ export IALB=2
 ++ IALB=2
 ++ export IEMS=2
@@ -804,16 +806,40 @@ COMPILE_NR: atm_dyn32_intel
 ++ IOPT_SFC=3
 ++ export IOPT_TRS=2
 ++ IOPT_TRS=2
-++ export IOPT_DIAG=2
-++ IOPT_DIAG=2
-++ export D2_BG_K1=0.20
-++ D2_BG_K1=0.20
-++ export D2_BG_K2=0.04
-++ D2_BG_K2=0.04
+++ export D2_BG_K1=0.0
+++ D2_BG_K1=0.0
+++ export D2_BG_K2=0.0
+++ D2_BG_K2=0.0
 ++ export PSM_BC=1
 ++ PSM_BC=1
-++ export DDDMP=0.1
-++ DDDMP=0.1
+++ export DDDMP=0.0
+++ DDDMP=0.0
+++ export NA_INIT=1
+++ NA_INIT=1
+++ export NUDGE_QV=.false.
+++ NUDGE_QV=.false.
+++ export Z_TRACER=.false.
+++ Z_TRACER=.false.
+++ export INLINE_Q=.true.
+++ INLINE_Q=.true.
+++ export TAU=0.0
+++ TAU=0.0
+++ export FV_SG_ADJ=-1
+++ FV_SG_ADJ=-1
+++ export VTDM4=0.0
+++ VTDM4=0.0
+++ export DELT_MAX=1.0
+++ DELT_MAX=1.0
+++ export DO_VORT_DAMP=.false.
+++ DO_VORT_DAMP=.false.
+++ export D_CON=0.0
+++ D_CON=0.0
+++ export MAKE_NH=.false.
+++ MAKE_NH=.false.
+++ export TRANS_TRAC=.false.
+++ TRANS_TRAC=.false.
+++ export FHZERO=1.0
+++ FHZERO=1.0
 ++ export USE_MERRA2=.true.
 ++ USE_MERRA2=.true.
 ++ export IAER=1011
@@ -884,8 +910,6 @@ COMPILE_NR: atm_dyn32_intel
 ++ FNVETC=''\''C96.vegetation_type.tileX.nc'\'''
 ++ export 'FNSOTC='\''C96.soil_type.tileX.nc'\'''
 ++ FNSOTC=''\''C96.soil_type.tileX.nc'\'''
-++ export 'FNSOCC='\''C96.soil_color.tileX.nc'\'''
-++ FNSOCC=''\''C96.soil_color.tileX.nc'\'''
 ++ export 'FNSMCC='\''global_soilmgldas.statsgo.t1534.3072.1536.grb'\'''
 ++ FNSMCC=''\''global_soilmgldas.statsgo.t1534.3072.1536.grb'\'''
 ++ export 'FNMSKH='\''global_slmask.t1534.3072.1536.grb'\'''
@@ -922,48 +946,40 @@ COMPILE_NR: atm_dyn32_intel
 ++ MOM6_RESTART_SETTING=n
 ++ export USE_CICE_ALB=.false.
 ++ USE_CICE_ALB=.false.
-++ export WRITE_NSFLIP=.true.
-++ WRITE_NSFLIP=.true.
-++ export FV3_RUN=control_run.IN
-++ FV3_RUN=control_run.IN
-++ export CCPP_SUITE=FV3_GFS_v17_p8
-++ CCPP_SUITE=FV3_GFS_v17_p8
-++ export FIELD_TABLE=field_table_thompson_noaero_tke
-++ FIELD_TABLE=field_table_thompson_noaero_tke
-++ export DIAG_TABLE=diag_table_p8_template
-++ DIAG_TABLE=diag_table_p8_template
-++ export INPUT_NML=cpld_control.nml.IN
-++ INPUT_NML=cpld_control.nml.IN
-++ export DO_RRTMGP=.false.
-++ DO_RRTMGP=.false.
-++ export DOGP_CLDOPTICS_LUT=.true.
-++ DOGP_CLDOPTICS_LUT=.true.
-++ export DOGP_LWSCAT=.true.
-++ DOGP_LWSCAT=.true.
-++ export DOGP_SGS_CNV=.true.
-++ DOGP_SGS_CNV=.true.
+++ export FV3_RUN=control_wam_run.IN
+++ FV3_RUN=control_wam_run.IN
+++ export CCPP_SUITE=FV3_GFS_v17_fv3wamphys
+++ CCPP_SUITE=FV3_GFS_v17_fv3wamphys
+++ export FIELD_TABLE=field_table_wam_thompson_noaer
+++ FIELD_TABLE=field_table_wam_thompson_noaer
+++ export DIAG_TABLE=diag_table_fv3wam_thompson
+++ DIAG_TABLE=diag_table_fv3wam_thompson
+++ export DIAG_TABLE_ADDITIONAL=diag_additional_wam_dtend
+++ DIAG_TABLE_ADDITIONAL=diag_additional_wam_dtend
+++ export INPUT_NML=fv3wamphys.nml.IN
+++ INPUT_NML=fv3wamphys.nml.IN
 ++ export SATMEDMF=.true.
 ++ SATMEDMF=.true.
-++ [[ hera = cheyenne ]]
+++ [[ hera = cheyenne.* ]]
 + remove_fail_test
-+ echo 'Removing test failure flag file for control_p8_intel 001'
-Removing test failure flag file for control_p8_intel 001
-+ rm -f /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests/fail_test_001
-+ export INPUT_DIR=control_p8
-+ INPUT_DIR=control_p8
-+ export RUNDIR=/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_200479/control_p8_intel
-+ RUNDIR=/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_200479/control_p8_intel
-+ export CNTL_DIR=control_p8
-+ CNTL_DIR=control_p8
-++ basename /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_200479
-+ export JBNME=rt_200479_001
-+ JBNME=rt_200479_001
++ echo 'Removing test failure flag file for control_fv3wamphys_p8_intel 001'
+Removing test failure flag file for control_fv3wamphys_p8_intel 001
++ rm -f /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/fail_test_001
++ export INPUT_DIR=control_fv3wam_p8
++ INPUT_DIR=control_fv3wam_p8
++ export RUNDIR=/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_159380/control_fv3wamphys_p8_intel
++ RUNDIR=/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_159380/control_fv3wamphys_p8_intel
++ export CNTL_DIR=control_fv3wam_p8
++ CNTL_DIR=control_fv3wam_p8
+++ basename /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_159380
++ export JBNME=rt_159380_001
++ JBNME=rt_159380_001
 ++ date +%s
-+ echo -n 'control_p8_intel, 1691124628,'
-+ export RT_LOG=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests/logs/log_hera/rt_001_control_p8_intel.log
-+ RT_LOG=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests/logs/log_hera/rt_001_control_p8_intel.log
-+ echo 'Test 001 control_p8_intel Compare global control results with previous trunk version'
-Test 001 control_p8_intel Compare global control results with previous trunk version
++ echo -n 'control_fv3wamphys_p8_intel, 1702324062,'
++ export RT_LOG=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/logs/log_hera/rt_001_control_fv3wamphys_p8_intel.log
++ RT_LOG=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/logs/log_hera/rt_001_control_fv3wamphys_p8_intel.log
++ echo 'Test 001 control_fv3wamphys_p8_intel fv3 wam p8 test'
+Test 001 control_fv3wamphys_p8_intel fv3 wam p8 test
 + source rt_utils.sh
 ++ set -eu
 ++ [[ ./run_test.sh = \.\/\r\t\_\u\t\i\l\s\.\s\h ]]
@@ -971,15 +987,15 @@ Test 001 control_p8_intel Compare global control results with previous trunk ver
 ++ slurm_id=0
 ++ bsub_id=0
 + source atparse.bash
-+ rm -rf /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_200479/control_p8_intel
-+ mkdir -p /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_200479/control_p8_intel
-+ cd /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_200479/control_p8_intel
-+ cp /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests/fv3_atm_dyn32_intel.exe fv3.exe
++ rm -rf /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_159380/control_fv3wamphys_p8_intel
++ mkdir -p /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_159380/control_fv3wamphys_p8_intel
++ cd /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_159380/control_fv3wamphys_p8_intel
++ cp /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/fv3_wam_intel.exe fv3.exe
 + mkdir -p modulefiles
 + [[ hera == linux ]]
-+ cp /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests/modules.fv3_atm_dyn32_intel.lua ./modulefiles/modules.fv3.lua
-+ cp /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/modulefiles/ufs_common.lua /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/modulefiles/ufs_common_spack.lua ./modulefiles/.
-+ cp /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests/module-setup.sh module-setup.sh
++ cp /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/modules.fv3_wam_intel.lua ./modulefiles/modules.fv3.lua
++ cp /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/modulefiles/ufs_common.lua /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/modulefiles/ufs_common_spack.lua ./modulefiles/.
++ cp /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/module-setup.sh module-setup.sh
 + [[ hera == wcoss2 ]]
 + [[ hera == acorn ]]
 + [[ hera == hera ]]
@@ -1064,9 +1080,9 @@ Test 001 control_p8_intel Compare global control results with previous trunk ver
 ++ export _ModuleTable_Sz_
 ++ : -s sh
 + eval
-+ SRCD=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3
-+ RUND=/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_200479/control_p8_intel
-+ '[' '!' -z control_run.IN ']'
++ SRCD=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev
++ RUND=/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_159380/control_fv3wamphys_p8_intel
++ '[' '!' -z control_wam_run.IN ']'
 + for i in '${FV3_RUN}'
 + atparse
 + local __set_x
@@ -1081,7 +1097,7 @@ Test 001 control_p8_intel Compare global control results with previous trunk ver
 + '[' -o xtrace ']'
 + __set_x='set -x'
 + set +x
-+ [[ -f /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests/parm/model_configure.IN ]]
++ [[ -f /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/parm/model_configure.IN ]]
 + atparse
 + local __set_x
 + '[' -o xtrace ']'
@@ -1127,7 +1143,7 @@ LND_petlist_bounds:
 UFS_tasks         : 150
 + export TASKS=150
 + TASKS=150
-+ [[ -f /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests/parm/nems.configure.atm.IN ]]
++ [[ -f /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/parm/nems.configure.atm.IN ]]
 + atparse
 + local __set_x
 + '[' -o xtrace ']'
@@ -1143,143 +1159,33 @@ UFS_tasks         : 150
 + sed -i -e '/<output_grid_05>/,/<\/output_grid_05>/d' model_configure
 + [[ Q != Q ]]
 + sed -i -e '/<output_grid_06>/,/<\/output_grid_06>/d' model_configure
-+ [[ Qdiag_table_p8_template != Q ]]
++ [[ Qdiag_table_fv3wam_thompson != Q ]]
 + atparse
 + local __set_x
 + '[' -o xtrace ']'
 + __set_x='set -x'
 + set +x
-+ [[ Qfield_table_thompson_noaero_tke != Q ]]
-+ cp /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests/parm/field_table/field_table_thompson_noaero_tke field_table
++ [[ Qfield_table_wam_thompson_noaer != Q ]]
++ cp /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/parm/field_table/field_table_wam_thompson_noaer field_table
 + [[ true == true ]]
-+ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/sfc_emissivity_idx.txt /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/solarconstant_noaa_an.txt .
-+ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/global_h2oprdlos.f77 /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/global_o3prdlos.f77 .
-+ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/aerosol.dat /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/freezeH2O.dat /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/qr_acr_qgV2.dat /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/qr_acr_qsV2.dat .
-+ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/fix_co2_proj/co2historicaldata_2009.txt /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/fix_co2_proj/co2historicaldata_2011.txt /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/fix_co2_proj/co2historicaldata_2012.txt /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/fix_co2_proj/co2historicaldata_2013.txt /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/fix_co2_proj/co2historicaldata_2014.txt /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/fix_co2_proj/co2historicaldata_2015.txt /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/fix_co2_proj/co2historicaldata_2016.txt /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/fix_co2_proj/co2historicaldata_2017.txt /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/fix_co2_proj/co2historicaldata_2018.txt /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/fix_co2_proj/co2historicaldata_2019.txt /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/fix_co2_proj/co2historicaldata_2020.txt /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/fix_co2_proj/co2historicaldata_2021.txt /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/fix_co2_proj/co2historicaldata_glob.txt /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/fix_co2_proj/co2monthlycyc.txt .
++ cp /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_fix/sfc_emissivity_idx.txt /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_fix/solarconstant_noaa_an.txt .
++ cp /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_fix/global_h2oprdlos.f77 /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_fix/global_o3prdlos.f77 .
++ cp /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_fix/aerosol.dat /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_fix/freezeH2O.dat /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_fix/qr_acr_qgV2.dat /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_fix/qr_acr_qsV2.dat .
++ cp /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_fix/fix_co2_proj/co2historicaldata_2009.txt /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_fix/fix_co2_proj/co2historicaldata_2011.txt /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_fix/fix_co2_proj/co2historicaldata_2012.txt /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_fix/fix_co2_proj/co2historicaldata_2013.txt /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_fix/fix_co2_proj/co2historicaldata_2014.txt /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_fix/fix_co2_proj/co2historicaldata_2015.txt /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_fix/fix_co2_proj/co2historicaldata_2016.txt /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_fix/fix_co2_proj/co2historicaldata_2017.txt /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_fix/fix_co2_proj/co2historicaldata_2018.txt /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_fix/fix_co2_proj/co2historicaldata_2019.txt /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_fix/fix_co2_proj/co2historicaldata_2020.txt /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_fix/fix_co2_proj/co2historicaldata_2021.txt /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_fix/fix_co2_proj/co2historicaldata_glob.txt /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_fix/fix_co2_proj/co2monthlycyc.txt .
 + [[ .true. != .true. ]]
-+ cp /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests/parm/noahmptable.tbl .
++ cp /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/parm/noahmptable.tbl .
 + [[ false == .true. ]]
-+ cp /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests/parm/fd_nems.yaml fd_nems.yaml
++ cp /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/parm/fd_nems.yaml fd_nems.yaml
 + source ./fv3_run
-++ rm -fr INPUT RESTART
-++ '[' 97 = 97 ']'
-++ inputdir=FV3_input_data
-++ echo inputdir=FV3_input_data,NPX=97
-inputdir=FV3_input_data,NPX=97
-++ OPNREQ_TEST=false
-++ SUFFIX=
+++ inputdir=FV3_input_data_L149
+++ FV3_FIX=/scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_fix/
+++ WAM_FIX=/scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/FV3_input_data_wam
 ++ '[' .false. = .false. ']'
 ++ mkdir INPUT RESTART
-++ cp -r /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/C96_grid.tile1.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/C96_grid.tile2.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/C96_grid.tile3.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/C96_grid.tile4.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/C96_grid.tile5.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/C96_grid.tile6.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/C96_mosaic.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/gfs_ctrl.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/gfs_data.tile1.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/gfs_data.tile2.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/gfs_data.tile3.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/gfs_data.tile4.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/gfs_data.tile5.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/gfs_data.tile6.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/grid_spec.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/oro_data_ls.tile1.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/oro_data_ls.tile2.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/oro_data_ls.tile3.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/oro_data_ls.tile4.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/oro_data_ls.tile5.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/oro_data_ls.tile6.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/oro_data_ss.tile1.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/oro_data_ss.tile2.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/oro_data_ss.tile3.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/oro_data_ss.tile4.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/oro_data_ss.tile5.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/oro_data_ss.tile6.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/oro_data.tile1.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/oro_data.tile2.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/oro_data.tile3.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/oro_data.tile4.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/oro_data.tile5.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/oro_data.tile6.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/sfc_data.tile1.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/sfc_data.tile2.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/sfc_data.tile3.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/sfc_data.tile4.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/sfc_data.tile5.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/INPUT_L127/sfc_data.tile6.nc ./INPUT/.
-++ '[' .true. = .true. ']'
-++ '[' .false. == .true. ']'
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.facsf.tile1.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.facsf.tile2.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.facsf.tile3.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.facsf.tile4.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.facsf.tile5.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.facsf.tile6.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.maximum_snow_albedo.tile1.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.maximum_snow_albedo.tile2.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.maximum_snow_albedo.tile3.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.maximum_snow_albedo.tile4.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.maximum_snow_albedo.tile5.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.maximum_snow_albedo.tile6.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.slope_type.tile1.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.slope_type.tile2.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.slope_type.tile3.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.slope_type.tile4.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.slope_type.tile5.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.slope_type.tile6.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.snowfree_albedo.tile1.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.snowfree_albedo.tile2.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.snowfree_albedo.tile3.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.snowfree_albedo.tile4.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.snowfree_albedo.tile5.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.snowfree_albedo.tile6.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.soil_color.tile1.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.soil_color.tile2.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.soil_color.tile3.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.soil_color.tile4.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.soil_color.tile5.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.soil_color.tile6.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.soil_type.tile1.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.soil_type.tile2.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.soil_type.tile3.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.soil_type.tile4.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.soil_type.tile5.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.soil_type.tile6.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.substrate_temperature.tile1.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.substrate_temperature.tile2.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.substrate_temperature.tile3.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.substrate_temperature.tile4.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.substrate_temperature.tile5.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.substrate_temperature.tile6.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.vegetation_greenness.tile1.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.vegetation_greenness.tile2.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.vegetation_greenness.tile3.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.vegetation_greenness.tile4.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.vegetation_greenness.tile5.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.vegetation_greenness.tile6.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.vegetation_type.tile1.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.vegetation_type.tile2.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.vegetation_type.tile3.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.vegetation_type.tile4.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.vegetation_type.tile5.nc /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix_tiled/C96/C96.vegetation_type.tile6.nc .
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/global_glacier.2x2.grb .
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/global_maxice.2x2.grb .
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/RTGSST.1982.2012.monthly.clim.grb .
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/global_snoclim.1.875.grb .
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/IMS-NIC.blended.ice.monthly.clim.grb .
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/global_soilmgldas.statsgo.t1534.3072.1536.grb .
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data/global_slmask.t1534.3072.1536.grb .
-++ '[' .false. = .true. ']'
-++ [[ global = \g\l\o\b\a\l ]]
-++ cp /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests/parm/post_itag_gfs itag
-++ cp /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests/parm/postxconfig-NT-gfs.txt postxconfig-NT.txt
-++ cp /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests/parm/postxconfig-NT-gfs_FH00.txt postxconfig-NT_FH00.txt
-++ cp /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests/parm/params_grib2_tbl_new params_grib2_tbl_new
-++ '[' .false. = .true. ']'
-++ '[' .true. = .true. ']'
-++ for n in 01 02 03 04 05 06 07 08 09 10 11 12
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data_INCCN_aeroclim/MERRA2/merra2.aerclim.2003-2014.m01.nc aeroclim.m01.nc
-++ for n in 01 02 03 04 05 06 07 08 09 10 11 12
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data_INCCN_aeroclim/MERRA2/merra2.aerclim.2003-2014.m02.nc aeroclim.m02.nc
-++ for n in 01 02 03 04 05 06 07 08 09 10 11 12
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data_INCCN_aeroclim/MERRA2/merra2.aerclim.2003-2014.m03.nc aeroclim.m03.nc
-++ for n in 01 02 03 04 05 06 07 08 09 10 11 12
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data_INCCN_aeroclim/MERRA2/merra2.aerclim.2003-2014.m04.nc aeroclim.m04.nc
-++ for n in 01 02 03 04 05 06 07 08 09 10 11 12
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data_INCCN_aeroclim/MERRA2/merra2.aerclim.2003-2014.m05.nc aeroclim.m05.nc
-++ for n in 01 02 03 04 05 06 07 08 09 10 11 12
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data_INCCN_aeroclim/MERRA2/merra2.aerclim.2003-2014.m06.nc aeroclim.m06.nc
-++ for n in 01 02 03 04 05 06 07 08 09 10 11 12
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data_INCCN_aeroclim/MERRA2/merra2.aerclim.2003-2014.m07.nc aeroclim.m07.nc
-++ for n in 01 02 03 04 05 06 07 08 09 10 11 12
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data_INCCN_aeroclim/MERRA2/merra2.aerclim.2003-2014.m08.nc aeroclim.m08.nc
-++ for n in 01 02 03 04 05 06 07 08 09 10 11 12
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data_INCCN_aeroclim/MERRA2/merra2.aerclim.2003-2014.m09.nc aeroclim.m09.nc
-++ for n in 01 02 03 04 05 06 07 08 09 10 11 12
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data_INCCN_aeroclim/MERRA2/merra2.aerclim.2003-2014.m10.nc aeroclim.m10.nc
-++ for n in 01 02 03 04 05 06 07 08 09 10 11 12
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data_INCCN_aeroclim/MERRA2/merra2.aerclim.2003-2014.m11.nc aeroclim.m11.nc
-++ for n in 01 02 03 04 05 06 07 08 09 10 11 12
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data_INCCN_aeroclim/MERRA2/merra2.aerclim.2003-2014.m12.nc aeroclim.m12.nc
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data_INCCN_aeroclim/aer_data/LUTS/optics_BC.v1_3.dat optics_BC.dat
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data_INCCN_aeroclim/aer_data/LUTS/optics_OC.v1_3.dat optics_OC.dat
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data_INCCN_aeroclim/aer_data/LUTS/optics_DU.v15_3.dat optics_DU.dat
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data_INCCN_aeroclim/aer_data/LUTS/optics_SS.v3_3.dat optics_SS.dat
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_input_data_INCCN_aeroclim/aer_data/LUTS/optics_SU.v1_3.dat optics_SU.dat
-++ '[' 1011 = 2011 ']'
-++ '[' .false. = .true. ']'
-++ '[' 8 = 8 ']'
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/qr_acr_qsV2.dat .
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/qr_acr_qgV2.dat .
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/freezeH2O.dat .
-++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3WAM/FV3_fix/CCN_ACTIVATE.BIN .
-++ '[' .false. = .true. ']'
-+ [[ .false. == .true. ]]
-+ [[ .false. == .true. ]]
-+ [[ false = \t\r\u\e ]]
-+ [[ false = \t\r\u\e ]]
-+ [[ false = \t\r\u\e ]]
-+ [[ Q != Q ]]
-+ [[ .false. == .true. ]]
-+ [[ false = \t\r\u\e ]]
-+ [[ false = \t\r\u\e ]]
-+ TPN=40
-+ ((  TASKS < TPN  ))
-+ export TPN
-+ NODES=3
-+ ((  NODES * TPN < TASKS  ))
-+ NODES=4
-+ export NODES
-+ TASKS=160
-+ export TASKS
-+ [[ slurm = \p\b\s ]]
-+ [[ slurm = \s\l\u\r\m ]]
-+ [[ -e /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-3/tests/fv3_conf/fv3_slurm.IN_hera ]]
-+ atparse
-+ local __set_x
-+ '[' -o xtrace ']'
-+ __set_x='set -x'
-+ set +x
-+ export OMP_ENV=
-+ OMP_ENV=
-+ [[ slurm = \n\o\n\e ]]
-+ [[ false = \f\a\l\s\e ]]
-+ submit_and_wait job_card
-+ [[ -z job_card ]]
-+ '[' -o xtrace ']'
-+ set_x='set -x'
-+ set +x
-Job id 47719134
-TEST 001 control_p8_intel is waiting to enter the queue
-TEST 001 control_p8_intel is submitted 
-1 min. TEST 001 control_p8_intel is running,  status: R jobid 47719134
-2 min. TEST 001 control_p8_intel is running,  status: R jobid 47719134
-3 min. TEST 001 control_p8_intel is running,  status: R jobid 47719134
-Slurm unknown status -. Check sacct ...
-47719134                COMPLETED        rt_200479_001 
-47719134.ba+            COMPLETED                batch 
-47719134.ex+            COMPLETED               extern 
-47719134.0              COMPLETED              fv3.exe 
-4 min. TEST 001 control_p8_intel is COMPLETED,  status: - jobid 47719134
-+ [[ false = false ]]
-+ check_results
-+ '[' -o xtrace ']'
-+ set_x='set -x'
-+ set +x
-
-baseline dir = /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/develop-20230726/control_p8_intel
-working dir  = /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_200479/control_p8_intel
-Checking test 001 control_p8_intel results ....
- Comparing sfcf000.nc ............ALT CHECK......ERROR
+++ cp -r /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/C96_grid.tile1.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/C96_grid.tile2.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/C96_grid.tile3.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/C96_grid.tile4.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/C96_grid.tile5.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/C96_grid.tile6.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/C96_oro_data.tile1.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/C96_oro_data.tile2.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/C96_oro_data.tile3.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/C96_oro_data.tile4.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/C96_oro_data.tile5.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/C96_oro_data.tile6.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/coupler.res /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/fv_core.res.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/fv_core.res.tile1.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/fv_core.res.tile2.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/fv_core.res.tile3.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/fv_core.res.tile4.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/fv_core.res.tile5.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/fv_core.res.tile6.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/fv_srf_wnd.res.tile1.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/fv_srf_wnd.res.tile2.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/fv_srf_wnd.res.tile3.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/fv_srf_wnd.res.tile4.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/fv_srf_wnd.res.tile5.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/fv_srf_wnd.res.tile6.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/fv_tracer.res.tile1.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/fv_tracer.res.tile2.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/fv_tracer.res.tile3.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/fv_tracer.res.tile4.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/fv_tracer.res.tile5.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/fv_tracer.res.tile6.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/gfs_ctrl.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/grid_spec.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/oro_data.tile1.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/oro_data.tile2.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/oro_data.tile3.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/oro_data.tile4.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/oro_data.tile5.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/oro_data.tile6.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/phy_data.tile1.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/phy_data.tile2.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/phy_data.tile3.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/phy_data.tile4.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/phy_data.tile5.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/phy_data.tile6.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/sfc_ctrl.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/sfc_data.tile1.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/sfc_data.tile2.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/sfc_data.tile3.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/sfc_data.tile4.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/sfc_data.tile5.nc /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/INPUT/sfc_data.tile6.nc ./INPUT/.
+++ cp '/scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/FV3_input_data_wam/global*dat' ./
+cp: cannot stat '/scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/FV3_input_data_L149/FV3_input_data_wam/global*dat': No such file or directory
++ '[' 1 -eq 0 ']'
++ write_fail_test
++ echo 'control_fv3wamphys_p8_intel 001 failed in run_test'
++ exit 1
