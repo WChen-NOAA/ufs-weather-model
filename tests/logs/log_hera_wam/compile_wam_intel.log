@@ -1,25 +1,25 @@
-+ echo PID=160628
-PID=160628
++ echo PID=129026
+PID=129026
 + SECONDS=0
 + trap '[ "$?" -eq 0 ] || write_fail_test' EXIT
 + trap 'echo "run_compile.sh interrupted PID=$$"; cleanup' INT
 + trap 'echo "run_compile.sh terminated PID=$$";  cleanup' TERM
 + [[ 4 != 4 ]]
-+ export PATHRT=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests
-+ PATHRT=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests
-+ export RUNDIR_ROOT=/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_159380
-+ RUNDIR_ROOT=/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_159380
++ export PATHRT=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev_b1/tests
++ PATHRT=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev_b1/tests
++ export RUNDIR_ROOT=/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_127935
++ RUNDIR_ROOT=/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_127935
 + export 'MAKE_OPT=-DAPP=ATM -DCCPP_SUITES=FV3_GFS_v16_fv3wamphys,FV3_GFS_v17_fv3wamphys -D32BIT=ON -DMULTI_GASES=ON'
 + MAKE_OPT='-DAPP=ATM -DCCPP_SUITES=FV3_GFS_v16_fv3wamphys,FV3_GFS_v17_fv3wamphys -D32BIT=ON -DMULTI_GASES=ON'
 + export COMPILE_NR=wam_intel
 + COMPILE_NR=wam_intel
-+ cd /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests
++ cd /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev_b1/tests
 + remove_fail_test
 + echo 'Removing test failure flag file for compile_wam_intel'
 Removing test failure flag file for compile_wam_intel
-+ rm -f /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/fail_compile_wam_intel
-+ [[ -e /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_159380/compile_wam_intel.env ]]
-+ source /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_159380/compile_wam_intel.env
++ rm -f /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev_b1/tests/fail_compile_wam_intel
++ [[ -e /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_127935/compile_wam_intel.env ]]
++ source /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_127935/compile_wam_intel.env
 ++ export JOB_NR=001
 ++ JOB_NR=001
 ++ export COMPILE_NR=wam_intel
@@ -28,10 +28,10 @@ Removing test failure flag file for compile_wam_intel
 ++ MACHINE_ID=hera
 ++ export RT_COMPILER=intel
 ++ RT_COMPILER=intel
-++ export PATHRT=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests
-++ PATHRT=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests
-++ export PATHTR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev
-++ PATHTR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev
+++ export PATHRT=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev_b1/tests
+++ PATHRT=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev_b1/tests
+++ export PATHTR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev_b1
+++ PATHTR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev_b1
 ++ export SCHEDULER=slurm
 ++ SCHEDULER=slurm
 ++ export ACCNR=fv3-cpu
@@ -44,10 +44,10 @@ Removing test failure flag file for compile_wam_intel
 ++ ROCOTO=false
 ++ export ECFLOW=false
 ++ ECFLOW=false
-++ export REGRESSIONTEST_LOG=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/logs/RegressionTests_weekly_hera.log
-++ REGRESSIONTEST_LOG=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/logs/RegressionTests_weekly_hera.log
-++ export LOG_DIR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/logs/log_hera
-++ LOG_DIR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/logs/log_hera
+++ export REGRESSIONTEST_LOG=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev_b1/tests/logs/RegressionTests_weekly_hera.log
+++ REGRESSIONTEST_LOG=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev_b1/tests/logs/RegressionTests_weekly_hera.log
+++ export LOG_DIR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev_b1/tests/logs/log_hera
+++ LOG_DIR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev_b1/tests/logs/log_hera
 + source default_vars.sh
 ++ THRD=1
 ++ INPES_atmaero=4
@@ -146,6 +146,7 @@ Removing test failure flag file for compile_wam_intel
 ++ [[ hera = wcoss2 ]]
 ++ [[ hera = acorn ]]
 ++ [[ hera = orion ]]
+++ [[ hera = hercules ]]
 ++ [[ hera = hera ]]
 ++ TPN=40
 ++ INPES_dflt=3
@@ -168,8 +169,8 @@ Removing test failure flag file for compile_wam_intel
 ++ WLCLK=30
 ++ export CMP_DATAONLY=false
 ++ CMP_DATAONLY=false
-+ [[ -e /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_159380/compile_wam_intel.env ]]
-+ source /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_159380/compile_wam_intel.env
++ [[ -e /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_127935/compile_wam_intel.env ]]
++ source /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_127935/compile_wam_intel.env
 ++ export JOB_NR=001
 ++ JOB_NR=001
 ++ export COMPILE_NR=wam_intel
@@ -178,10 +179,10 @@ Removing test failure flag file for compile_wam_intel
 ++ MACHINE_ID=hera
 ++ export RT_COMPILER=intel
 ++ RT_COMPILER=intel
-++ export PATHRT=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests
-++ PATHRT=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests
-++ export PATHTR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev
-++ PATHTR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev
+++ export PATHRT=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev_b1/tests
+++ PATHRT=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev_b1/tests
+++ export PATHTR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev_b1
+++ PATHTR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev_b1
 ++ export SCHEDULER=slurm
 ++ SCHEDULER=slurm
 ++ export ACCNR=fv3-cpu
@@ -194,22 +195,22 @@ Removing test failure flag file for compile_wam_intel
 ++ ROCOTO=false
 ++ export ECFLOW=false
 ++ ECFLOW=false
-++ export REGRESSIONTEST_LOG=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/logs/RegressionTests_weekly_hera.log
-++ REGRESSIONTEST_LOG=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/logs/RegressionTests_weekly_hera.log
-++ export LOG_DIR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/logs/log_hera
-++ LOG_DIR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/logs/log_hera
+++ export REGRESSIONTEST_LOG=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev_b1/tests/logs/RegressionTests_weekly_hera.log
+++ REGRESSIONTEST_LOG=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev_b1/tests/logs/RegressionTests_weekly_hera.log
+++ export LOG_DIR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev_b1/tests/logs/log_hera
+++ LOG_DIR=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev_b1/tests/logs/log_hera
 + export TEST_NAME=compile
 + TEST_NAME=compile
 + export TEST_NR=wam_intel
 + TEST_NR=wam_intel
 + export JBNME=compile_wam_intel
 + JBNME=compile_wam_intel
-+ export RUNDIR=/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_159380/compile_wam_intel
-+ RUNDIR=/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_159380/compile_wam_intel
++ export RUNDIR=/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_127935/compile_wam_intel
++ RUNDIR=/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_127935/compile_wam_intel
 ++ date +%s
-+ echo -n 'compile_wam_intel, 1702323395,'
-+ export RT_LOG=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/logs/log_hera/compile_wam_intel.log
-+ RT_LOG=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/logs/log_hera/compile_wam_intel.log
++ echo -n 'compile_wam_intel, 1703279382,'
++ export RT_LOG=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev_b1/tests/logs/log_hera/compile_wam_intel.log
++ RT_LOG=/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev_b1/tests/logs/log_hera/compile_wam_intel.log
 + source rt_utils.sh
 ++ set -eu
 ++ [[ ./run_compile.sh = \.\/\r\t\_\u\t\i\l\s\.\s\h ]]
@@ -217,12 +218,12 @@ Removing test failure flag file for compile_wam_intel
 ++ slurm_id=0
 ++ bsub_id=0
 + source atparse.bash
-+ rm -rf /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_159380/compile_wam_intel
-+ mkdir -p /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_159380/compile_wam_intel
-+ cd /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_159380/compile_wam_intel
++ rm -rf /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_127935/compile_wam_intel
++ mkdir -p /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_127935/compile_wam_intel
++ cd /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_127935/compile_wam_intel
 + [[ slurm = \p\b\s ]]
 + [[ slurm = \s\l\u\r\m ]]
-+ [[ -e /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/fv3_conf/compile_slurm.IN_hera ]]
++ [[ -e /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev_b1/tests/fv3_conf/compile_slurm.IN_hera ]]
 + atparse
 + local __set_x
 + '[' -o xtrace ']'
@@ -234,35 +235,34 @@ Removing test failure flag file for compile_wam_intel
 + '[' -o xtrace ']'
 + set_x='set -x'
 + set +x
-Job id 52844667
+Job id 53237137
 TEST wam_intel compile_intel is waiting to enter the queue
 TEST wam_intel compile_intel is submitted 
-1 min. TEST wam_intel compile_intel is running,  status: R jobid 52844667
-2 min. TEST wam_intel compile_intel is running,  status: R jobid 52844667
-3 min. TEST wam_intel compile_intel is running,  status: R jobid 52844667
-4 min. TEST wam_intel compile_intel is running,  status: R jobid 52844667
-5 min. TEST wam_intel compile_intel is running,  status: R jobid 52844667
-6 min. TEST wam_intel compile_intel is running,  status: R jobid 52844667
-7 min. TEST wam_intel compile_intel is running,  status: R jobid 52844667
-8 min. TEST wam_intel compile_intel is running,  status: R jobid 52844667
-9 min. TEST wam_intel compile_intel is running,  status: R jobid 52844667
-10 min. TEST wam_intel compile_intel is running,  status: R jobid 52844667
+1 min. TEST wam_intel compile_intel is running,  status: R jobid 53237137
+2 min. TEST wam_intel compile_intel is running,  status: R jobid 53237137
+3 min. TEST wam_intel compile_intel is running,  status: R jobid 53237137
+4 min. TEST wam_intel compile_intel is running,  status: R jobid 53237137
+5 min. TEST wam_intel compile_intel is running,  status: R jobid 53237137
+6 min. TEST wam_intel compile_intel is running,  status: R jobid 53237137
+7 min. TEST wam_intel compile_intel is running,  status: R jobid 53237137
+8 min. TEST wam_intel compile_intel is running,  status: R jobid 53237137
+9 min. TEST wam_intel compile_intel is running,  status: R jobid 53237137
 Slurm unknown status -. Check sacct ...
-52844667                COMPLETED    compile_wam_intel 
-52844667.ba+            COMPLETED                batch 
-52844667.ex+            COMPLETED               extern 
-11 min. TEST wam_intel compile_intel is COMPLETED,  status: - jobid 52844667
-+ ls -l /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/fv3_wam_intel.exe
--rwxr-xr-x 1 Wen.Chen stmp 276652592 Dec 11 19:45 /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/fv3_wam_intel.exe
-+ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_159380/compile_wam_intel/compile_wam_intel_time.log /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/logs/log_hera
-+ cat /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_159380/compile_wam_intel/job_timestamp.txt
+53237137                COMPLETED    compile_wam_intel 
+53237137.ba+            COMPLETED                batch 
+53237137.ex+            COMPLETED               extern 
+10 min. TEST wam_intel compile_intel is COMPLETED,  status: - jobid 53237137
++ ls -l /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev_b1/tests/fv3_wam_intel.exe
+-rwxr-xr-x 1 Wen.Chen stmp 139822608 Dec 22 21:18 /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev_b1/tests/fv3_wam_intel.exe
++ cp /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_127935/compile_wam_intel/compile_wam_intel_time.log /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev_b1/tests/logs/log_hera
++ cat /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_127935/compile_wam_intel/job_timestamp.txt
 + remove_fail_test
 + echo 'Removing test failure flag file for compile_wam_intel'
 Removing test failure flag file for compile_wam_intel
-+ rm -f /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev/tests/fail_compile_wam_intel
++ rm -f /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c_dev_b1/tests/fail_compile_wam_intel
 ++ date +%s
-+ echo ' 1702324062, 1'
-+ elapsed=667
-+ echo 'Elapsed time 667 seconds. Compile wam_intel'
-Elapsed time 667 seconds. Compile wam_intel
++ echo ' 1703279989, 1'
++ elapsed=607
++ echo 'Elapsed time 607 seconds. Compile wam_intel'
+Elapsed time 607 seconds. Compile wam_intel
 + '[' 0 -eq 0 ']'

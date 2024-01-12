@@ -1,17 +1,28 @@
-Mon Dec 11 19:36:32 UTC 2023
+Mon Jan  8 15:39:52 UTC 2024
 Start Regression test
 
-Testing UFSWM Hash: 30c1627d82c6ad8193c2a03b4e55b510f2aa0eac
+Testing UFSWM Hash: 42825d4d93c0cbe5b9d2851d5ffa561488e53661
 Testing With Submodule Hashes:
- 37cbb7d6840ae7515a9a8f0dfd4d89461b3396d1 ../AQM (v0.2.0-37-g37cbb7d)
- 2aa6bfbb62ebeecd7da964b8074f6c3c41c7d1eb ../CDEPS-interface/CDEPS (cdeps0.4.17-38-g2aa6bfb)
- 5840cd1931e2e32b9dfded0c19049d0f1ec3d04c ../CICE-interface/CICE (CICE6.0.0-440-g5840cd1)
- 9923d6d17700daf502d9a016138bf8eb8aad7f09 ../CMEPS-interface/CMEPS (cmeps_v0.4.1-1402-g9923d6d)
- cabd7753ae17f7bfcc6dad56daf10868aa51c3f4 ../CMakeModules (v1.0.0-28-gcabd775)
- 6cb9f77e30c2fd67a57bf9ac393dc44921215690 ../FV3 (remotes/origin/wam2_dev)
- b94145fca46169bbc53ec6b8d4ed849715dc5130 ../GOCART (rt-v5_29_1_BPL91_1-exRT4-514-gb94145f)
- 24437531dcf8580aadaf6ebeb9de544ccfc674f9 ../HYCOM-interface/HYCOM (2.3.00-120-g2443753)
- fdbfa2523650b81a0771f3fb1791ea3e3dce66db ../MOM6-interface/MOM6 (dev/master/repository_split_2014.10.10-9713-gfdbfa2523)
- 569e354ababbde7a7cd68647533769a5c966468d ../NOAHMP-interface/noahmp (v3.7.1-303-g569e354)
- 59c554a12df3a04e0402ce5f17bb32cbbac193b2 ../WW3 (6.07.1-341-g59c554a1)
- 3bfa4468d85e5b63980c28434f494967f38b10a3 ../stochastic_physics (ufs-v2.0.0-171-g3bfa446)
+ 37cbb7d6840ae7515a9a8f0dfd4d89461b3396d1 AQM (v0.2.0-37-g37cbb7d)
+ 2aa6bfbb62ebeecd7da964b8074f6c3c41c7d1eb CDEPS-interface/CDEPS (cdeps0.4.17-38-g2aa6bfb)
+ 50aa2c97882fbc9d4918813a22169fe97b424564 CICE-interface/CICE (CICE6.0.0-444-g50aa2c9)
+ e5d08d4233b0c783a4840dcbc3252a170e3c3bb1 CMEPS-interface/CMEPS (cmeps_v0.4.1-1406-ge5d08d4)
+ cabd7753ae17f7bfcc6dad56daf10868aa51c3f4 CMakeModules (v1.0.0-28-gcabd775)
+ b6e429efdced214d3e89d94106071a91443cb7e1 FV3 (heads/rmap_dev2)
+ 041422934cae1570f2f0e67239d5d89f11c6e1b7 GOCART (sdr_v2.1.2.6-119-g0414229)
+ 35789c757766e07f688b4c0c7c5229816f224b09 HYCOM-interface/HYCOM (2.3.00-121-g35789c7)
+ a36cb73d6924f6cf56a72b5799bef3d75fe4dd61 MOM6-interface/MOM6 (dev/master/repository_split_2014.10.10-9871-ga36cb73d6)
+ 569e354ababbde7a7cd68647533769a5c966468d NOAHMP-interface/noahmp (v3.7.1-303-g569e354)
+ 02693d837f2cd99d20ed08515878c2b5e9525e64 WW3 (6.07.1-343-g02693d83)
+ 37e740526993fd162d092266ced19c625fbc3d8e stochastic_physics (ufs-v2.0.0-193-g37e7405)
+Compile atm_dyn32_intel elapsed time 596 seconds. -DAPP=ATM -DCCPP_SUITES=FV3_GFS_v16,FV3_GFS_v16_flake,FV3_GFS_v17_p8,FV3_GFS_v17_p8_rrtmgp,FV3_GFS_v15_thompson_mynn_lam3km,FV3_WoFS_v0,FV3_GFS_v17_p8_mynn,FV3_GFS_v17_p8_ugwpv1 -D32BIT=ON -DMPI=ON -DCMAKE_BUILD_TYPE=Release
+
+  0: The total amount of wall time                        = 171.808297
+  0: The maximum resident set size (KB)                   = 1608380
+
+Test 001 control_p8_intel RUN_SUCCESS
+
+
+REGRESSION TEST WAS SUCCESSFUL
+Mon Jan  8 15:56:38 UTC 2024
+Elapsed time: 00h:16m:48s. Have a nice day!
