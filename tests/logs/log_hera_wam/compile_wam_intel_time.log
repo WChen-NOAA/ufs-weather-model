@@ -1,1 +1,0 @@
-Compile wam_intel elapsed time 527 seconds. -DAPP=ATM -DCCPP_SUITES=FV3_GFS_v16_fv3wamphys,FV3_GFS_v17_fv3wamphys -D32BIT=ON -DMULTI_GASES=ON -DMPI=ON -DCMAKE_BUILD_TYPE=Release
