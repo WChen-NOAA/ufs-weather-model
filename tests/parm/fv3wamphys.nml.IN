@@ -53,7 +53,7 @@
     a_imp = 1.
     p_fac = 0.1
     k_split = 2
-    n_split = 6
+    n_split = 4 
     nwat = 6
     na_init = @[NA_INIT]
     d_ext = 0.
@@ -62,7 +62,7 @@
     d2_bg = 0.
     nord = 2
     dddmp = @[DDDMP]
-    d4_bg = 0.16
+    d4_bg = 0.1
     vtdm4 = @[VTDM4]
     delt_max = @[DELT_MAX]
     ke_bg = 0.
