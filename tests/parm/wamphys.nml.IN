@@ -7,6 +7,7 @@
 
 &diag_manager_nml
        prepend_date = .false.
+       max_output_fields = 500
 /
 
 &fms_nml
@@ -24,31 +25,43 @@
 /
 
 &fv_core_nml
-       layout   = @[INPES],@[JNPES]
+       layout   = 3,8
        io_layout = 1,1
-       npx      = @[NPX]
-       npy      = @[NPY]
+       npx      = 97
+       npy      = 97
        ntiles   = 6,
-       npz    = @[NPZ]
+       npz    = 149
        grid_type = -1
-       ncnst     = 11
-       make_nh = @[MAKE_NH]
-       fv_debug = .false.
+       ncnst     = 13
+       make_nh = .false.
+       fv_debug = .true.
        molecular_diffusion=.true.
        range_warn = .false.
        reset_eta = .false.
        n_sponge = -1
-       nudge_qv = .true.
-       tau = -5.0e1
-       rf_cutoff = 2.e2
-       d2_bg_k1 = 0.20
-       d2_bg_k2 = 0.005
+       nudge_qv = .false.
+       nudge_dz = .false.
+       tau = 0.0 
+       rf_cutoff = 1.0
+       d2_bg_k1 = 0.0
+       d2_bg_k2 = 0.0
+       fv_sg_adj = -1
+       d2_bg = 0.
+       nord =  1
+       dddmp = 0.0
+       d4_bg = 0.1
+       vtdm4 = 0.0
+       delt_max = 1.0
+       ke_bg = 0.
+       d_con = 0.0
+       do_vort_damp = .false.
+       consv_te = 0.
        kord_tm = -9
        kord_mt =  9
        kord_wz =  9
        kord_tr =  9
        hydrostatic = .false.
-       phys_hydrostatic = .false.
+       phys_hydrostatic = .true.
        use_hydro_pressure = .false.
        beta = 0.
        a_imp = 1.
@@ -56,57 +69,63 @@
        k_split  = 2
        n_split  = 6
        nwat = 6
-       na_init = @[NA_INIT]
+       na_init = 0
        d_ext = 0.0
-       dnats = 0
-       fv_sg_adj = 1800
-       d2_bg = 0.
-       nord =  1
-       dddmp = 0.1
-       d4_bg = 0.20
-       vtdm4 = 0.07
-       delt_max = 0.002
-       ke_bg = 0.
-       do_vort_damp = .true.
-       external_ic = @[EXTERNAL_IC]
+       dnats = 0       
+       external_ic = .true.
        external_eta = .true.
        gfs_phil = .false.
-       nggps_ic = @[NGGPS_IC]
-       mountain = @[MOUNTAIN]
+       nggps_ic = .true.
+       mountain = .false.
        ncep_ic = .false.
-       d_con = 1.
        hord_mt =  6
        hord_vt =  6
        hord_tm =  6
        hord_dp =  6
        hord_tr = 8
        adjust_dry_mass = .false.
-       consv_te = 0.
-       do_sat_adj = .false.
+       do_sat_adj = .true.
        consv_am = .false.
        fill = .true.
        dwind_2d = .false.
        print_freq = 6
-       warm_start = @[WARM_START]
+       warm_start = .false.
        no_dycore = .false.
-       z_tracer = .true.
-       read_increment = @[READ_INCREMENT]
+       z_tracer = .false.
+       agrid_vel_rst = .true.
+       inline_q = .true.
+       read_increment = .false.
        res_latlon_dynamics = "fv3_increment.nc"
 /
 
+#&coupler_nml
+#       months = 0
+#       days  = 1
+#       hours = 0
+#       dt_atmos = 225
+#       dt_ocean = 225
+#       current_date =  2016,10,03,00,0,0
+#       calendar = 'julian'
+#       memuse_verbose = .false.
+#       atmos_nthreads = 1
+#       use_hyper_thread = .false.
+#       ncores_per_node = 24
+#/
+
 &external_ic_nml
        filtered_terrain = .true.
-       levp = @[NPZP]
+       levp = 150
        gfs_dwinds = .true.
        checker_tr = .false.
        nt_checker = 0
 /
 
 &gfs_physics_nml
-       fhzero         = 6.
-       ldiag3d        = .false.
-       fhcyc          = 24.
-       nst_anl        = .true.
+       fhzero         = 1
+       ldiag3d        = .true.
+       qdiag3d        = .true.
+       print_diff_pgr = .false.
+       fhcyc          = 24
        use_ufo        = .true.
        pre_rad        = .false.
        imp_physics    = 11
@@ -115,11 +134,12 @@
        fhlwr          = 3600.
        ialb           = 1
        iems           = 1
-       IAER           = @[IAER]
+       IAER           = 5111
        ico2           = 2
        isubc_sw       = 2
        isubc_lw       = 2
        isol           = 2
+       iovr           = 3
        lwhtr          = .true.
        swhtr          = .true.
        cnvgwd         = .true.
@@ -129,20 +149,21 @@
        dspheat        = .true.
        hybedmf        = .false.
        satmedmf       = .true.
-       lheatstrg      = @[LHEATSTRG]
-       lseaspray      = @[LSEASPRAY]
+       isatmedmf      = 1
+       lheatstrg      = .false.
+       lseaspray      = .false.
        random_clds    = .true.
        trans_trac     = .false.
        cnvcld         = .true.
        imfshalcnv     = 2
        imfdeepcnv     = 2
-       isatmedmf      = 1
+       ras            = .false.
        cdmbgwd        = 3.5,0.25
        prslrd0        = 0.
        ivegsrc        = 1
        isot           = 1
        lsm            = 1
-       iopt_dveg      = 2
+       iopt_dveg      = 1 
        iopt_crs       = 1
        iopt_btr       = 1
        iopt_run       = 1
@@ -155,23 +176,30 @@
        iopt_tbot      = 2
        iopt_stc       = 1
        iopt_trs       = 2
-       iopt_diag      = 2
-       debug          = .false.
-       levr           = 90
-       h2o_phys       = @[H2O_PHYS]
-       nstf_name      = @[NSTF_NAME]
-       oz_phys      = .false.
-       oz_phys_2015 = .true.
-       cplflx         = @[CPLFLX]
-       cplwav         = @[CPLWAV]
-       iau_delthrs    = 6
-       iaufhrs        = 30
-       iau_inc_files  = @[IAU_INC_FILES]
-       do_sppt        = @[DO_SPPT]
-       do_shum        = @[DO_SHUM]
-       do_skeb        = @[DO_SKEB]
-       lndp_type      = @[LNDP_TYPE]
-       n_var_lndp     = @[N_VAR_LNDP]
+       debug          = .true.
+       levr           = 89
+       h2o_phys       = .true.
+       nstf_name      = 0,0,1,0,5
+       nst_anl        = .true.
+       psautco        = 0.0008,0.0005
+       prautco        = 0.00015,0.00015
+       lgfdlmprad     = .true.
+       oz_phys        = .false.
+       oz_phys_2015   = .true.
+       cplflx         = .false.
+       cplwav         = .false.
+       cplwav2atm     = .false.
+       effr_in        = .true.
+       iau_inc_files  = ''
+       do_sppt        = .false.
+       do_shum        = .false.
+       do_skeb        = .false.
+       lndp_type      = 0
+       n_var_lndp     = 0
+       do_wamphys     = .true.
+       do_wamphys_diag= .true.
+       do_wamgfs_rad  = .true.
+       do_wamipe      = .false.             
 /
 &gfdl_cloud_microphysics_nml
   sedi_transport = .true.
@@ -234,14 +262,14 @@
        FNTSFC   = "RTGSST.1982.2012.monthly.clim.grb",
        FNSNOC   = "global_snoclim.1.875.grb",
        FNZORC   = "igbp",
-       FNALBC   = @[FNALBC]
+       FNALBC   = 'global_snowfree_albedo.bosu.t126.384.190.rg.grb'
        FNALBC2  = "global_albedo4.1x1.grb",
        FNAISC   = "CFSR.SEAICE.1982.2012.monthly.clim.grb",
        FNTG3C   = "global_tg3clim.2.6x1.5.grb",
        FNVEGC   = "global_vegfrac.0.144.decpercent.grb",
-       FNVETC   = @[FNVETC]
-       FNSOTC   = @[FNSOTC]
-       FNSMCC   = @[FNSMCC]
+       FNVETC   = 'global_vegtype.igbp.t126.384.190.rg.grb'
+       FNSOTC   = 'global_soiltype.statsgo.t126.384.190.rg.grb'
+       FNSMCC   = 'global_soilmgldas.statsgo.t1534.3072.1536.grb'
        FNMSKH   = "global_slmask.t1534.3072.1536.grb",
        FNTSFA   = "",
        FNACNA   = "",
@@ -249,7 +277,7 @@
        FNVMNC   = "global_shdmin.0.144x0.144.grb",
        FNVMXC   = "global_shdmax.0.144x0.144.grb",
        FNSLPC   = "global_slope.1x1.grb",
-       FNABSC   = @[FNABSC]
+       FNABSC   = 'global_mxsnoalb.uariz.t126.384.190.rg.grb'
        LDEBUG   =.false.,
        FSMCL(2) = 99999
        FSMCL(3) = 99999
@@ -276,13 +304,13 @@
   SKEBNORM=1,
   SKEB_NPASS=30,
   SKEB_VDOF=5,
-  SKEB=@[SKEB],
+  SKEB=-999.,
   SKEB_TAU=2.16E4,
   SKEB_LSCALE=1000.E3,
-  SHUM=@[SHUM],
+  SHUM=-999.,
   SHUM_TAU=21600,
   SHUM_LSCALE=500000,
-  SPPT=@[SPPT],
+  SPPT=-999.,
   SPPT_TAU=21600,
   SPPT_LSCALE=500000,
   SPPT_LOGIT=.true.,
@@ -292,7 +320,7 @@
   ISEED_SPPT=3,
 /
 &nam_sfcperts
-  lndp_type      = @[LNDP_TYPE]
+  lndp_type      = 0
   LNDP_TAU=21600,
   LNDP_LSCALE=500000,
   ISEED_LNDP=2010,
@@ -316,9 +344,26 @@
        knob_ugwp_version = 0
        launch_level      = 25
 /
+&wamphys_nml
+     JH0=1.75, JH_tanh=0.5, JH_semiann=0.5, JH_ann=0.0,
+     skeddy0=140., skeddy_semiann=60., skeddy_ann=0.,
+     tkeddy0=280., tkeddy_semiann=0., tkeddy_ann=0., f107_fix=80.,
+     f107a_fix= 80., kp_fix= 3.0, kpa_fix=3.0, gW_fix=30.,tiros_activity_fix =7.,
+     tiros_switch=0,bnhp=21.0, bnhpi=6, bshp=21.0, bshpi=6, bswbt=0.46482, bswang=180.,
+     bswvel=460.13, bswbz=-0.46482, bswden=5.0, spw_drivers= 'swpc_fst',
+      efield_model='epot', swin_drivers='swin_wam',
+     do_init_tides=.false.,do_init_swio=.true., do_init_wamtracers=.true.,
+     do_init_wamion=.true., do_init_wamrad=.true.
+/
 &multi_gases_nml
-  ri= 295.3892,  461.50, 0., 0., 0., 0., 0., 173.2247,  519.674, 259.8370 ,0.,0.
-  cpi=1031.1083, 1846.00, 0., 0., 0., 0., 0.,  820.2391, 1299.185, 918.0969, 0.,0.
+  ri= 295.3892,  461.50, 0., 0., 0., 0., 0., 173.2247,  519.674, 259.8370 ,0.,0.,0.
+  cpi=1031.1083, 1846.00, 0., 0., 0., 0., 0.,  820.2391, 1299.185, 918.0969, 0.,0.,0.
+/
+&wamphys_tracer_cpi
+  ri= 295.3892,  461.50, 0., 0., 0., 0., 0., 173.2247,  519.674, 259.8370 ,0.,0.,0.
+  cpi=1031.1083, 1846.00, 0., 0., 0., 0., 0.,  820.2391, 1299.185, 918.0969, 0.,0.,0.
+  ntrac_wat=6
+  ntrac_nml=12
 /
 &molecular_diffusion_nml
   tau_visc = 1.0

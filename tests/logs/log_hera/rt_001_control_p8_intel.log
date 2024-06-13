@@ -1,0 +1,5 @@
+
+baseline dir = /scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/develop-20230726/control_p8_intel
+working dir  = /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_200479/control_p8_intel
+Checking test 001 control_p8_intel results ....
+ Comparing sfcf000.nc ............ALT CHECK......ERROR

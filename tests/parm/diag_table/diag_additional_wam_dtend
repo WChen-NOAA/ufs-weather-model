@@ -1,0 +1,18 @@
+
+# This file contains diag_table entries for 3D diagnostic tendencies from the fv3_gfs_ (fv3wam) suite.
+# It should be appended to the end of the diag_table before execution of the test.
+
+# Old d*3dt variables with new names:
+
+"gfs_phys", "dtend_temp_wamphys", "dtend_temp_wamphys", "fv3_history", "all", .false., "none", 2
+"gfs_phys", "dtend_u_wamphys",    "dtend_u_wamphys",    "fv3_history", "all", .false., "none", 2
+"gfs_phys", "dtend_v_wamphys",    "dtend_v_wamphys",    "fv3_history", "all", .false., "none", 2
+"gfs_phys", "dtend_o1_wamphys",   "dtend_o1_wamphys",   "fv3_history", "all", .false., "none", 2
+"gfs_phys", "dtend_o2_wamphys",   "dtend_o2_wamphys",   "fv3_history", "all", .false., "none", 2
+"gfs_phys", "dtend_temp_wammd",   "dtend_temp_wammd",   "fv3_history", "all", .false., "none", 2
+"gfs_phys", "dtend_u_wammd",      "dtend_u_wammd",      "fv3_history", "all", .false., "none", 2
+"gfs_phys", "dtend_v_wammd",      "dtend_v_wammd",      "fv3_history", "all", .false., "none", 2
+"gfs_phys", "dtend_temp_wamion",  "dtend_temp_wamion",  "fv3_history", "all", .false., "none", 2
+"gfs_phys", "dtend_u_wamion",     "dtend_u_wamion",     "fv3_history", "all", .false., "none", 2
+"gfs_phys", "dtend_v_wamion",     "dtend_v_wamion",     "fv3_history", "all", .false., "none", 2
+"gfs_phys", "dtend_temp_wamrad",  "dtend_temp_wamrad",  "fv3_history", "all", .false., "none", 2

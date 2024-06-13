@@ -342,8 +342,8 @@ elif [[ $MACHINE_ID = hera ]]; then
   module load ecflow/5.5.3
   ECFLOW_START=ecflow_start.sh
 
-  QUEUE=batch
-  COMPILE_QUEUE=batch
+  QUEUE=debug
+  COMPILE_QUEUE=debug
 
   PARTITION=
   dprefix=/scratch1/NCEPDEV
@@ -369,8 +369,8 @@ elif [[ $MACHINE_ID = orion ]]; then
   ECFLOW_START=/work/noaa/epic/role-epic/spack-stack/orion/ecflow-5.8.4/bin/ecflow_start.sh
   ECF_PORT=$(( $(id -u) + 1500 ))
 
-  QUEUE=batch
-  COMPILE_QUEUE=batch
+  QUEUE=debug
+  COMPILE_QUEUE=debug
   PARTITION=orion
   dprefix=/work/noaa/stmp/${USER}
   DISKNM=/work/noaa/epic/UFS-WM_RT

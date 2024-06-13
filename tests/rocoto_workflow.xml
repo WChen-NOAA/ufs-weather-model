@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE workflow
+[
+  <!ENTITY PATHRT         "/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-2/tests">
+  <!ENTITY LOG            "/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-2/tests/logs/log_hera">
+  <!ENTITY PATHTR         "/scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam2c-test-2">
+  <!ENTITY RTPWD          "/scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/develop-20230726">
+  <!ENTITY INPUTDATA_ROOT "/scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101">
+  <!ENTITY INPUTDATA_ROOT_WW3 "/scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/input-data-20221101/WW3_input_data_20220624">
+  <!ENTITY INPUTDATA_ROOT_BMIC "/scratch1/NCEPDEV/nems/emc.nemspara/RT/NEMSfv3gfs/BM_IC-20220207">
+  <!ENTITY RUNDIR_ROOT    "/scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_184198">
+  <!ENTITY NEW_BASELINE   "/scratch1/NCEPDEV/stmp4/Wen.Chen/FV3_RT/REGRESSION_TEST">
+]>
+<workflow realtime="F" scheduler="slurm" taskthrottle="20">
+  <cycledef>197001010000 197001010000 01:00:00</cycledef>
+  <log>&LOG;/workflow.log</log>
