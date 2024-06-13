@@ -1,0 +1,28 @@
+Tue Jan 16 19:52:13 UTC 2024
+Start Regression test
+
+Testing UFSWM Hash: 6eeb7e98ccbfc44433ba10f158f7344bcf190b9a
+Testing With Submodule Hashes:
+ 37cbb7d6840ae7515a9a8f0dfd4d89461b3396d1 AQM (v0.2.0-37-g37cbb7d)
+ 2aa6bfbb62ebeecd7da964b8074f6c3c41c7d1eb CDEPS-interface/CDEPS (cdeps0.4.17-38-g2aa6bfb)
+ 620e48fe75d92aa607af7e21f2d8691baddd2851 CICE-interface/CICE (CICE6.0.0-445-g620e48f)
+ f8f7ba76ac8b0687695c2a76deaf45ab5c2e39f3 CMEPS-interface/CMEPS (cmeps_v0.4.1-1408-gf8f7ba7)
+ 607d9b4633395b4be88d87a1df88b46302d48d0c CMakeModules (v1.0.0-32-g607d9b4)
+ 48c248dfadb90f24c4b1c1fcf1345e716996caee FV3 (heads/rmap_dev2)
+ 041422934cae1570f2f0e67239d5d89f11c6e1b7 GOCART (sdr_v2.1.2.6-119-g0414229)
+ 35789c757766e07f688b4c0c7c5229816f224b09 HYCOM-interface/HYCOM (2.3.00-121-g35789c7)
+ 60c397b910c9f0c5d1b35f9fea2293ccebd27fc8 MOM6-interface/MOM6 (dev/master/repository_split_2014.10.10-9875-g60c397b91)
+ 569e354ababbde7a7cd68647533769a5c966468d NOAHMP-interface/noahmp (v3.7.1-303-g569e354)
+ 02693d837f2cd99d20ed08515878c2b5e9525e64 WW3 (6.07.1-343-g02693d83)
+ a5561802021d89a9a1e2b52cb69393efcdc6f71c stochastic_physics (ufs-v2.0.0-199-ga556180)
+Compile wam_debug_intel elapsed time 187 seconds. -DAPP=ATM -DCCPP_SUITES=FV3_GFS_v16_fv3wamphys,FV3_GFS_v17_fv3wamphys -D32BIT=ON -DMULTI_GASES=ON -DDEBUG=ON -DMPI=ON -DCMAKE_BUILD_TYPE=Debug
+
+  0: The total amount of wall time                        = 472.300557
+  0: The maximum resident set size (KB)                   = 854936
+
+Test 001 control_fv3wamphys_debug_intel RUN_SUCCESS
+
+
+REGRESSION TEST WAS SUCCESSFUL
+Tue Jan 16 20:06:42 UTC 2024
+Elapsed time: 00h:14m:32s. Have a nice day!

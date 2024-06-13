@@ -16,12 +16,12 @@
        print_memory_usage = .false.
 /
 
-&fms2_io_nml
-  netcdf_default_format = "netcdf4"
-/
-
 &fv_grid_nml
        grid_file = 'INPUT/grid_spec.nc'
+/
+
+&fms2_io_nml
+  netcdf_default_format = "netcdf4"
 /
 
 &fv_core_nml
@@ -29,7 +29,7 @@
        io_layout = 1,1
        npx      = 97
        npy      = 97
-       ntiles   = 6
+       ntiles   = 6,
        npz    = 149
        grid_type = -1
        ncnst     = 13
@@ -61,13 +61,13 @@
        kord_wz =  9
        kord_tr =  9
        hydrostatic = .false.
-       phys_hydrostatic = .false.
+       phys_hydrostatic = .true.
        use_hydro_pressure = .false.
        beta = 0.
        a_imp = 1.
        p_fac = 0.1
        k_split  = 2
-       n_split  = 4 
+       n_split  = 6
        nwat = 6
        na_init = 0
        d_ext = 0.0
@@ -84,7 +84,6 @@
        hord_dp =  6
        hord_tr = 8
        adjust_dry_mass = .false.
-       gmao_remap = 0
        do_sat_adj = .true.
        consv_am = .false.
        fill = .true.
@@ -98,6 +97,20 @@
        read_increment = .false.
        res_latlon_dynamics = "fv3_increment.nc"
 /
+
+#&coupler_nml
+#       months = 0
+#       days  = 1
+#       hours = 0
+#       dt_atmos = 225
+#       dt_ocean = 225
+#       current_date =  2016,10,03,00,0,0
+#       calendar = 'julian'
+#       memuse_verbose = .false.
+#       atmos_nthreads = 1
+#       use_hyper_thread = .false.
+#       ncores_per_node = 24
+#/
 
 &external_ic_nml
        filtered_terrain = .true.
@@ -285,37 +298,32 @@
        FSICS    = 99999,
 /
 &nam_stochy
-  STOCHINI=@[STOCHINI],
+  lon_s=768,
+  lat_s=384,
+  ntrunc=382,
   SKEBNORM=1,
   SKEB_NPASS=30,
   SKEB_VDOF=5,
-  SKEB=@[SKEB],
+  SKEB=-999.,
   SKEB_TAU=2.16E4,
   SKEB_LSCALE=1000.E3,
-  SKEBINT=1800,
-  SHUM=@[SHUM],
+  SHUM=-999.,
   SHUM_TAU=21600,
   SHUM_LSCALE=500000,
-  SHUMINT=3600,
-  SPPT=@[SPPT],
+  SPPT=-999.,
   SPPT_TAU=21600,
   SPPT_LSCALE=500000,
-  SPPT_LOGIT=.TRUE.,
-  SPPT_SFCLIMIT=.TRUE.,
-  SPPTINT=1800,
+  SPPT_LOGIT=.true.,
+  SPPT_SFCLIMIT=.true.,
   ISEED_SHUM=1,
   ISEED_SKEB=2,
   ISEED_SPPT=3,
 /
-
 &nam_sfcperts
-  lndp_type      = @[LNDP_TYPE]
-  lndp_model_type = @[LNDP_MODEL_TYPE]
+  lndp_type      = 0
   LNDP_TAU=21600,
   LNDP_LSCALE=500000,
   ISEED_LNDP=2010,
-  lndp_var_list = @[LNDP_VAR_LIST]
-  lndp_prt_list = @[LNDP_PRT_LIST]
 /
 
 &sat_vapor_pres_nml
