@@ -1,3 +1,14 @@
-Wed Mar  1 18:00:10 EST 2023
+Thu Nov  2 20:09:44 UTC 2023
 Start Regression test
 
+Compile 001 elapsed time 355 seconds. -DAPP=ATM -DCCPP_SUITES=FV3_GFS_v16_fv3wamphys -D32BIT=ON -DMULTI_GASES=ON -DREPRO=ON -DMPI=ON -DCMAKE_BUILD_TYPE=Release
+
+  0: The total amount of wall time                        = 564.513806
+  0: The maximum resident set size (KB)                   = 566752
+
+Test 001 control_wamphys RUN_SUCCESS
+
+
+REGRESSION TEST WAS SUCCESSFUL
+Thu Nov  2 20:37:13 UTC 2023
+Elapsed time: 00h:27m:30s. Have a nice day!
