@@ -173,6 +173,10 @@
     cnvcld       = @[CNVCLD]
     imfshalcnv   = @[IMFSHALCNV]
     imfdeepcnv   = @[IMFDEEPCNV]
+    progsigma    = @[PROGSIGMA]
+    betascu      = @[BETASCU]
+    betamcu      = @[BETAMCU]
+    betadcu      = @[BETADCU]
     ras          = @[RAS]
     cdmbgwd      = @[CDMBWD]
     prslrd0      = 0.
@@ -243,8 +247,8 @@
     knob_ugwp_effac   = 1,1,1,1
     knob_ugwp_doaxyz  = 1
     knob_ugwp_doheat  = 1
-    knob_ugwp_dokdis  = 1
-    knob_ugwp_ndx4lh  = 1
+    knob_ugwp_dokdis  = @[KNOB_UGWP_DOKDIS]
+    knob_ugwp_ndx4lh  = @[KNOB_UGWP_NDX4LH]
     knob_ugwp_version = @[KNOB_UGWP_VERSION]
  ! This is only for UGWP v0
 @[HIDE_UGWPV0] launch_level      = 25
@@ -414,5 +418,5 @@
   md_layers = 70
   md_tadj_layers = 0
   md_consv_te = 1.0
-  md_wait_hr  = 0.0
+  md_subcycle=.true.
 /
