@@ -189,6 +189,7 @@
     iopt_btr     = 1
     iopt_run     = 1
     iopt_sfc     = @[IOPT_SFC]
+    iopt_diag    = @[IOPT_DIAG]
     iopt_trs     = @[IOPT_TRS]
     iopt_frz     = 1
     iopt_inf     = 1

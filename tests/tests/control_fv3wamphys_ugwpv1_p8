@@ -94,7 +94,7 @@ export NFRACSEED=0.5
 export CA_TRIGGER=.true.
 export NSPINUP=1
 export ISEED_CA=12345
-export PROGSIGMA=.true.
+export PROGSIGMA=.false.
 export TRANS_TRAC=.true.
 # settings
 export TILEDFIX=.true.
