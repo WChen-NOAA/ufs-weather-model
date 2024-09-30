@@ -1,10 +1,10 @@
 ###############################################################################
 #
-#  Global control multigases test
+#  Global control test FV3WAM atmosphere only at C96L149, P8 configuration
 #
 ###############################################################################
 
-export TEST_DESCR="Compare global control multigases results with previous trunk version"
+export TEST_DESCR="fv3 wam test"
 
 export CNTL_DIR=control_wamphys
 
@@ -12,8 +12,10 @@ export LIST_FILES="sfcf024.nc \
                    atmf024.nc"
 
 export_fv3
+export_tiled
 export NPZ=149
 export NPZP=150
+#something different with the upper stream
 export DT_ATMOS="300"
 export SYEAR="2018"
 export SMONTH="02"
@@ -42,8 +44,5 @@ export INPUT_NML=wamphys.nml.IN
 
 export QUILTING=.true.
 export OUTPUT_GRID="gaussian_grid"
-export OZ_PHYS_OLD=.false.
-export OZ_PHYS_NEW=.true.
-export H2O_PHYS=.true.
 export NFHOUT=6
 export NFHOUT_HF=6

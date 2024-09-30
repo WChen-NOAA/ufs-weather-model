@@ -36,6 +36,7 @@ list(APPEND mom6_src_files
   MOM6/src/core/MOM_continuity_PPM.F90
   MOM6/src/core/MOM_density_integrals.F90
   MOM6/src/core/MOM_dynamics_split_RK2.F90
+  MOM6/src/core/MOM_dynamics_split_RK2b.F90
   MOM6/src/core/MOM_dynamics_unsplit.F90
   MOM6/src/core/MOM_dynamics_unsplit_RK2.F90
   MOM6/src/core/MOM_forcing_type.F90
@@ -59,6 +60,7 @@ list(APPEND mom6_src_files
   MOM6/src/diagnostics/MOM_sum_output.F90
   MOM6/src/diagnostics/MOM_wave_speed.F90
 
+  MOM6/src/equation_of_state/MOM_EOS_base_type.F90
   MOM6/src/equation_of_state/MOM_EOS.F90
   MOM6/src/equation_of_state/MOM_EOS_Jackett06.F90
   MOM6/src/equation_of_state/MOM_EOS_Roquet_SpV.F90
@@ -165,6 +167,7 @@ list(APPEND mom6_src_files
   MOM6/src/parameterizations/lateral/MOM_thickness_diffuse.F90
   MOM6/src/parameterizations/lateral/MOM_tidal_forcing.F90
   MOM6/src/parameterizations/lateral/MOM_Zanna_Bolton.F90
+  MOM6/src/parameterizations/lateral/MOM_self_attr_load.F90
 
   MOM6/src/parameterizations/vertical/MOM_ALE_sponge.F90
   MOM6/src/parameterizations/vertical/MOM_CVMix_KPP.F90
@@ -305,7 +308,11 @@ list(APPEND mom6_nuopc_src_files
   MOM6/config_src/drivers/nuopc_cap/mom_cap_time.F90
   MOM6/config_src/drivers/nuopc_cap/mom_ocean_model_nuopc.F90
   MOM6/config_src/drivers/nuopc_cap/mom_surface_forcing_nuopc.F90
-  MOM6/config_src/drivers/unit_tests/MOM_unit_test_driver.F90
+  MOM6/config_src/drivers/unit_tests/test_MOM_file_parser.F90
+  MOM6/config_src/drivers/unit_tests/test_MOM_mixedlayer_restrat.F90
+  MOM6/config_src/drivers/unit_tests/test_MOM_string_functions.F90
+  MOM6/config_src/drivers/unit_tests/test_MOM_EOS.F90
+  MOM6/config_src/drivers/timing_tests/time_MOM_EOS.F90
 )
 
 list(APPEND mom6_solo_src_files
