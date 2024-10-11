@@ -101,9 +101,10 @@ export MOM6_RESTART_SETTING=n
 export USE_CICE_ALB=.false.
 
 export FV3_RUN=wam_run.IN
-export CCPP_SUITE=FV3_GFS_v17_p8
+export CCPP_SUITE=FV3_GFS_v17_fv3wamphys
 export FIELD_TABLE=field_table_wam_noaer
 export DIAG_TABLE=diag_table_wam
+export DIAG_TABLE_ADDITIONAL=diag_additional_wam_dtend
 
 export INPUT_NML=wam_v17.nml.IN
 

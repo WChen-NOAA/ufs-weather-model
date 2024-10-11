@@ -11,8 +11,7 @@ export CNTL_DIR=control_wamphys
 export LIST_FILES="sfcf024.nc \
                    atmf024.nc"
 
-export_fv3
-export_tiled
+export_fv3_v16
 export NPZ=149
 export NPZP=150
 #something different with the upper stream
@@ -46,3 +45,7 @@ export QUILTING=.true.
 export OUTPUT_GRID="gaussian_grid"
 export NFHOUT=6
 export NFHOUT_HF=6
+export OZ_PHYS_OLD=.false.
+export OZ_PHYS_NEW=.true.
+export H2O_PHYS=.true.
+

@@ -1,9 +1,9 @@
-inputdir=FV3_input_data_L149
+inputdir=FV3_input_data_L149_wam
 FV3_FIX=@[INPUTDATA_ROOT]/FV3_fix/
-WAM_FIX=@[INPUTDATA_ROOT]/${inputdir}/FV3_input_data_wam
+WAM_FIX=@[INPUTDATA_ROOT]/${inputdir}/WAM_fix
 if [ $WARM_START = .false. ]; then
   mkdir INPUT RESTART
-  cp -r @[INPUTDATA_ROOT]/${inputdir}/INPUT/* ./INPUT/.
+  cp -r @[INPUTDATA_ROOT]/${inputdir}/INPUT_C_20180201_Good/* ./INPUT/.
   cp ${WAM_FIX}/global*dat ./
   cp ${WAM_FIX}/global_idea_coeff_lte* ./
   cp ${WAM_FIX}/global_idea_ggww* ./
@@ -36,7 +36,7 @@ if [ $TILEDFIX = .true. ]; then
     cp    @[INPUTDATA_ROOT]/FV3_fix/RTGSST.1982.2012.monthly.clim.grb .
     cp    @[INPUTDATA_ROOT]/FV3_fix/global_snoclim.1.875.grb .
     cp    @[INPUTDATA_ROOT]/FV3_fix/IMS-NIC.blended.ice.monthly.clim.grb .
-    cp    @[INPUTDATA_ROOT]/${inputdir}/@[FNSMCC] .
+    cp    @[INPUTDATA_ROOT]/${inputdir}/@[FNSMCC_control] .
     cp    @[INPUTDATA_ROOT]/${inputdir}/@[FNMSKH_control] .
 else
     cp    @[INPUTDATA_ROOT]/${inputdir}/*grb .
