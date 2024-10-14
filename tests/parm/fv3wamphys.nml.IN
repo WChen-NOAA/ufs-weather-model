@@ -136,11 +136,12 @@
     do_ugwp_v0   = @[DO_UGWP_V0]
     do_ugwp_v1   = @[DO_UGWP_V1]
     do_ugwp_v0_orog_only = .false.
-    do_ugwp_v0_nst_only  = @[DO_UGWP_V0_NST_ONLY]
+    do_ugwp_v0_nst_only  = .false.
     do_gsl_drag_ls_bl    = @[DO_GSL_DRAG_LS_BL]
     do_gsl_drag_ss       = @[DO_GSL_DRAG_SS]
     do_gsl_drag_tofd     = @[DO_GSL_DRAG_TOFD]
-    do_ugwp_v1_orog_only = @[DO_UGWP_V1_OROG_ONLY]
+    do_gwd_opt_psl       = @[DO_GWD_OPT_PSL]
+    do_ugwp_v1_orog_only = .false.
     min_lakeice  = 0.15
     min_seaice   = @[MIN_SEAICE]
     use_cice_alb = @[USE_CICE_ALB]
@@ -179,6 +180,7 @@
     betadcu      = @[BETADCU]
     ras          = @[RAS]
     cdmbgwd      = @[CDMBWD]
+    psl_gwd_dx_factor = 6.0
     prslrd0      = 0.
     ivegsrc      = 1
     isot         = 1
