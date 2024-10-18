@@ -1,7 +1,7 @@
 ====START OF HERA REGRESSION TESTING LOG====
 
 UFSWM hash used in testing:
-32c5f45b408ba1a1d0228a1104934de8d105e302
+5666f7f58bbad1b813354260568b966d6c08b73e
 
 Submodule hashes used in testing:
  37cbb7d6840ae7515a9a8f0dfd4d89461b3396d1 AQM (v0.2.0-37-g37cbb7d)
@@ -9,7 +9,7 @@ Submodule hashes used in testing:
  2ffee5cd48e0c389bdf75c0d910b3f6d53263563 CICE-interface/CICE (CICE6.0.0-451-g2ffee5c)
  f13e16e414e115e268b2dd300b665e628e5f2429 CMEPS-interface/CMEPS (cmeps_v0.4.1-2308-gf13e16e)
  cabd7753ae17f7bfcc6dad56daf10868aa51c3f4 CMakeModules (v1.0.0-28-gcabd775)
- 1cccb9a7e03f79849d2dce7cd287491fc0482609 FV3 (heads/wamhr4)
+ 5e82beea8615c841dcc0197b5e7bc4c6bdc52eae FV3 (heads/wamhr4)
  041422934cae1570f2f0e67239d5d89f11c6e1b7 GOCART (sdr_v2.1.2.6-119-g0414229)
  bcf7777bb037ae2feb2a8a8ac51aacb3511b52d9 HYCOM-interface/HYCOM (2.3.00-122-gbcf7777)
  00f8ea2023f5ed58f0605cea373094f65ee90f64 MOM6-interface/MOM6 (dev/master/repository_split_2014.10.10-10197-g00f8ea202)
@@ -25,25 +25,31 @@ The second time is specifically for the run phase.
 Times/Memory will be empty for failed tests.
 
 BASELINE DIRECTORY: /scratch2/NAGAPE/epic/UFS-WM_RT/NEMSfv3gfs/develop-20240821
-COMPARISON DIRECTORY: /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_124047
+COMPARISON DIRECTORY: /scratch1/NCEPDEV/stmp2/Wen.Chen/FV3_RT/rt_4117648
 
 RT.SH OPTIONS USED:
 * (-a) - HPC PROJECT ACCOUNT: fv3-cpu
 * (-l) - USE CONFIG FILE: wamphys_rt.conf
 * (-k) - KEEP RUN DIRECTORY
 
-PASS -- COMPILE 'wam_debug_intel' [05:12, 04:45] ( 929 warnings 1 remarks )
-FAILED: UNABLE TO COMPLETE COMPARISON -- TEST 'control_fv3wamphys_p8_debug_intel' [, ]( MB)
+PASS -- COMPILE 'wam_intel' [10:12, 09:35] ( 1 warnings 1 remarks )
+FAILED: UNABLE TO COMPLETE COMPARISON -- TEST 'control_fv3wamphys_intel' [, ]( MB)
+FAILED: UNABLE TO COMPLETE COMPARISON -- TEST 'control_fv3wamphys_p8_intel' [, ]( MB)
+FAILED: UNABLE TO COMPLETE COMPARISON -- TEST 'control_fv3wamphys_ugwpv1_p8_intel' [, ]( MB)
 
 SYNOPSIS:
-Starting Date/Time: 20241009 14:43:35
-Ending Date/Time: 20241009 14:50:30
-Total Time: 00h:07m:03s
+Starting Date/Time: 20241017 10:27:57
+Ending Date/Time: 20241017 11:17:04
+Total Time: 00h:49m:16s
 Compiles Completed: 1/1
-Tests Completed: 0/1
+Tests Completed: 0/3
 Failed Tests:
-* TEST control_fv3wamphys_p8_debug_intel: FAILED: UNABLE TO COMPLETE COMPARISON
--- LOG: /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam-hr4-not-use-3/tests/logs/log_hera/run_control_fv3wamphys_p8_debug_intel.log
+* TEST control_fv3wamphys_intel: FAILED: UNABLE TO COMPLETE COMPARISON
+-- LOG: /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam-hr4/tests/logs/log_hera/run_control_fv3wamphys_intel.log
+* TEST control_fv3wamphys_p8_intel: FAILED: UNABLE TO COMPLETE COMPARISON
+-- LOG: /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam-hr4/tests/logs/log_hera/run_control_fv3wamphys_p8_intel.log
+* TEST control_fv3wamphys_ugwpv1_p8_intel: FAILED: UNABLE TO COMPLETE COMPARISON
+-- LOG: /scratch1/NCEPDEV/global/Wen.Chen/FV3WAM/wam-hr4/tests/logs/log_hera/run_control_fv3wamphys_ugwpv1_p8_intel.log
 
 NOTES:
 A file 'test_changes.list' was generated with list of all failed tests.

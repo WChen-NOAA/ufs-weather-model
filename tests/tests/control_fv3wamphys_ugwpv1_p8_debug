@@ -8,8 +8,8 @@ export TEST_DESCR="fv3 wam p8 test"
 
 export CNTL_DIR=control_fv3wam_p8
 
-export LIST_FILES="sfcf024.nc \
-                   atmf024.nc"
+export LIST_FILES="sfcf002.nc \
+                   atmf002.nc"
 
 export_fv3
 export_tiled
@@ -21,7 +21,7 @@ export SYEAR=2018
 export SMONTH=2
 export SDAY=1
 export SHOUR=0
-export FHMAX=24
+export FHMAX=2
 export OUTPUT_GRID='gaussian_grid'
 export FHROT=0
 export WLCLK=30
