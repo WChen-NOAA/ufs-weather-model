@@ -3,6 +3,7 @@
   chksum_debug = @[CHKSUM_DEBUG]
   dycore_only = @[DYCORE_ONLY]
   ccpp_suite = '@[CCPP_SUITE]'
+  pdc = .false.
 /
 
 &diag_manager_nml
