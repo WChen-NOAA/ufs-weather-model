@@ -1,18 +1,29 @@
-====START OF HERA REGRESSION TESTING LOG====
+====START OF URSA REGRESSION TESTING LOG====
 
 UFSWM hash used in testing:
 2e6c3dc5d631fa64cbfb61a2bc98f8f3c5c668bc
 
 Submodule hashes used in testing:
  37cbb7d6840ae7515a9a8f0dfd4d89461b3396d1 AQM (v0.2.0-37-g37cbb7d)
+ be5d28fd1b60522e6fc98aefeead20e6aac3530b AQM/src/model/CMAQ (CMAQv5.2.1_07Feb2018-198-gbe5d28fd1)
  fbdf6843d6bde852d97f1547591d90136103f669 CDEPS-interface/CDEPS (cdeps0.4.17-41-gfbdf684)
  2ffee5cd48e0c389bdf75c0d910b3f6d53263563 CICE-interface/CICE (CICE6.0.0-451-g2ffee5c)
+ f6ff8f7c4d4cb6feabe3651b13204cf43fc948e3 CICE-interface/CICE/icepack (Icepack1.1.0-182-gf6ff8f7)
  f13e16e414e115e268b2dd300b665e628e5f2429 CMEPS-interface/CMEPS (cmeps_v0.4.1-2308-gf13e16e)
  cabd7753ae17f7bfcc6dad56daf10868aa51c3f4 CMakeModules (v1.0.0-28-gcabd775)
  064e6638dbd06a9353dfd78682fd1bf2b9ea189f FV3 (remotes/origin/ufs-wamv1)
+ 40981ef7292936613c7a40b3a6ab81ef2425fc9b FV3/atmos_cubed_sphere (remotes/origin/ufs-wamv1)
+ 0f8232724975c13289cad390c9a71fa2c6a9bff4 FV3/ccpp/framework (2024-07-11-dev)
+ 10398d5e9cc911ad4e15f36ebacf4036d59de9e9 FV3/ccpp/physics (remotes/origin/ufs-wamv1)
+ 74a0e098b2163425e4b5466c2dfcf8ae26d560a5 FV3/ccpp/physics/physics/Radiation/RRTMGP/rte-rrtmgp (v1.6)
+ 81b38a88d860ce7e34e8507c2246151a54d96a39 FV3/upp (upp_v10.2.0-218-g81b38a88)
+-1ba8270870947b583cd51bc72ff8960f4c1fb36e FV3/upp/sorc/libIFI.fd
+-567edcc94bc418d0dcd6cdaafed448eeb5aab570 FV3/upp/sorc/ncep_post.fd/post_gtg.fd
  041422934cae1570f2f0e67239d5d89f11c6e1b7 GOCART (sdr_v2.1.2.6-119-g0414229)
  bcf7777bb037ae2feb2a8a8ac51aacb3511b52d9 HYCOM-interface/HYCOM (2.3.00-122-gbcf7777)
  00f8ea2023f5ed58f0605cea373094f65ee90f64 MOM6-interface/MOM6 (dev/master/repository_split_2014.10.10-10197-g00f8ea202)
+ 9423197f894112edfcb1502245f7d7b873d551f9 MOM6-interface/MOM6/pkg/CVMix-src (9423197)
+ 29e64d652786e1d076a05128c920f394202bfe10 MOM6-interface/MOM6/pkg/GSW-Fortran (29e64d6)
  3ac32f0db7a2a97d930f44fa5f060c983ff31ee8 NOAHMP-interface/noahmp (v3.7.1-436-g3ac32f0)
  7f548c795a348bbb0fe4967dd25692c79036dc73 WW3 (6.07.1-346-g7f548c79)
  fad2fe9f42f6b7f744b128b4a2a9433f91e4296f stochastic_physics (ufs-v2.0.0-219-gfad2fe9)
@@ -24,33 +35,29 @@ The first time is for the full script (prep+run+finalize).
 The second time is specifically for the run phase.
 Times/Memory will be empty for failed tests.
 
-BASELINE DIRECTORY: /scratch3/NAGAPE/epic/role.epic/UFS-WM_RT/NEMSfv3gfs/develop-20250729
-COMPARISON DIRECTORY: /scratch3/NCEPDEV/stmp/Wen.Chen/RT_RUNDIRS/Wen.Chen/FV3_RT/rt_3697935
+BASELINE DIRECTORY: /scratch4/NAGAPE/epic/role-epic/UFS-WM_RT/NEMSfv3gfs/develop-20251031
+COMPARISON DIRECTORY: /scratch4/NCEPDEV/stmp/Wen.Chen/RT_RUNDIRS/Wen.Chen/FV3_RT/rt_1093978
 
 RT.SH OPTIONS USED:
 * (-a) - HPC PROJECT ACCOUNT: fv3-cpu
-* (-l) - USE CONFIG FILE: wamphys_rt.conf
+* (-l) - USE CONFIG FILE: wam.conf
 * (-w) - SKIP RESULTS CHECK
 * (-k) - KEEP RUN DIRECTORY
 
-PASS -- COMPILE 'wam_intel' [11:11, 09:32] ( 6 warnings 409 remarks )
-FAILED: RUN DID NOT COMPLETE -- TEST 'control_fv3wamphys_ugwpv1_p8_intel' [, ]( MB)
+PASS -- COMPILE 'wam_intel' [07:11, 05:55] ( 6 warnings 409 remarks )
+PASS -- TEST 'control_fv3wamphys_ugwpv1_p8_intel' [07:42, 05:31](1873 MB)
 
 SYNOPSIS:
-Starting Date/Time: 20250826 12:31:49
-Ending Date/Time: 20250826 12:43:04
-Total Time: 00h:11m:22s
+Starting Date/Time: 20260112 10:55:18
+Ending Date/Time: 20260112 11:10:11
+Total Time: 00h:15m:07s
 Compiles Completed: 1/1
-Tests Completed: 0/1
-Failed Tests:
-* TEST control_fv3wamphys_ugwpv1_p8_intel: FAILED: RUN DID NOT COMPLETE
--- LOG: /scratch3/NCEPDEV/global/Wen.Chen/work/FV3WAM/ufs-wamv1-u/tests/logs/log_hera/run_control_fv3wamphys_ugwpv1_p8_intel.log
+Tests Completed: 1/1
 
 NOTES:
-A file 'test_changes.list' was generated with list of all failed tests.
-You can use './rt.sh -c -b test_changes.list' to create baselines for the failed tests.
+A file 'test_changes.list' was generated but is empty.
 If you are using this log as a pull request verification, please commit 'test_changes.list'.
 
-Result: FAILURE
+Result: SUCCESS
 
-====END OF HERA REGRESSION TESTING LOG====
+====END OF URSA REGRESSION TESTING LOG====
