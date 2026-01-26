@@ -1,3 +1,4 @@
+SUFFIX=${RT_SUFFIX}
 if [ $WARM_START = .false. ]; then
   mkdir INPUT RESTART
   cp -r /scratch3/NCEPDEV/swpc/Svetlana.Karol/save/FV3WAM_C96_L196/INPUT/* ./INPUT/.
