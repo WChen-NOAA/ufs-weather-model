@@ -6,7 +6,7 @@
 
 export TEST_DESCR="fv3 wam p8 test"
 
-export CNTL_DIR=control_fv3wam_p8
+export CNTL_DIR=ufswamv1
 
 export LIST_FILES="sfcf024.nc \
                    atmf024.nc"
@@ -30,11 +30,12 @@ export SMONTH=2
 export SDAY=1
 export SHOUR=0
 export FHMAX=24
+export RESTART_INTERVAL="12 -1"
 export OUTPUT_GRID='gaussian_grid'
 export FHROT=0
 export WLCLK=30
 
-export OUTPUT_FH='1 -1'
+export OUTPUT_FH='6 -1'
 
 export IALB=2
 export IEMS=2
@@ -63,7 +64,7 @@ export VTDM4=0.0
 export DELT_MAX=1.0
 export DO_VORT_DAMP=.false.
 export D_CON=0.0
-export MAKE_NH=.false.
+export MAKE_NH=.true.
 export TRANS_TRAC=.false.
 export FHZERO=1.0
 export VAR_GRAV=.true.

@@ -6,7 +6,7 @@
 
 export TEST_DESCR="fv3 wam p8 test"
 
-export CNTL_DIR=control_fv3wam_p8
+export CNTL_DIR=ufswamv1
 
 export LIST_FILES="sfcf024.nc \
                    atmf024.nc"
@@ -31,10 +31,10 @@ export SDAY=1
 export SHOUR=0
 export FHMAX=24
 export OUTPUT_GRID='gaussian_grid'
-export FHROT=0
+export FHROT=12
 export WLCLK=30
 
-export OUTPUT_FH='1 -1'
+export OUTPUT_FH='6 -1'
 
 export IALB=2
 export IEMS=2
@@ -53,7 +53,7 @@ export D2_BG_K2=0.0
 export PSM_BC=1
 
 export DDDMP=0.0
-export NA_INIT=1
+export NA_INIT=0
 export NUDGE_QV=.false.
 export Z_TRACER=.false.
 export INLINE_Q=.true.
@@ -72,10 +72,19 @@ export VAR_GRAV=.true.
 #  Merra2 Aerosols & NSST
 export USE_MERRA2=.true.
 export IAER=1011
-export NSTF_NAME=2,1,0,0,0
+export NSTF_NAME=2,0,0,0,0
 
 export LHEATSTRG=.false.
 export LSEASPRAY=.true.
+#Warm Start
+export WARM_START=.true.
+export MOUNTAIN=.true.
+export EXTERNAL_IC=.false.
+export NGGPS_IC=.false.
+export NA_INIT=0
+export MAKE_NH=.false.
+export NSTF_NAME=2,0,0,0,0
+export RESTART_FILE_PREFIX="${SYEAR}${SMONTH}${SDAY}.$(printf "%02d" $(( ${SHOUR} + ${FHROT}  )))0000"
 
 # UGWP1
 export CDMBWD=0.14,1.8,1.0,0.0
