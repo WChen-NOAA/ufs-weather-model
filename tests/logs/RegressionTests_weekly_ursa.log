@@ -1,0 +1,68 @@
+====START OF URSA REGRESSION TESTING LOG====
+
+UFSWM hash used in testing:
+15f983fb9efcb4a5fb612f0f8ebf471f30335046
+
+Submodule hashes used in testing:
+ 2c1cec7dd4d7a477abd2ae204db4a78295c24f16 AQM (v0.2.0-63-g2c1cec7)
+ 642e81395472d5887b54f601b60ee607ed39bf09 AQM/src/model/CMAQ (CMAQv5.2.1_07Feb2018-6194-g642e81395)
+ 9f53664ef2e607ad25d6b6c939f2eac9ec818ee6 CDEPS-interface/CDEPS (cdeps0.4.17-432-g9f53664)
+ c90ee5a0e72ecc9cbee4694e95df228d01f8d7dd CICE-interface/CICE (CICE6.0.0-444-gc90ee5a)
+ 4954a6f9033f78e5c32bf33780384cbf2d0843e6 CICE-interface/CICE/icepack (Icepack1.1.0-225-g4954a6f)
+ 607a0bddcef8b8c4f0c80886be68db88fe52429f CMEPS-interface/CMEPS (cmeps_v0.4.1-2325-g607a0bd)
+ 69049ec0c26b3160c3dbe1980b2feb78470a37a6 CMakeModules (v1.0.0-36-g69049ec)
+ 9ff3df9545dd582f415f682d3297e8c6c841e5cb GOCART (sdr_v2.1.2.6-291-g9ff3df9)
+ bcf7777bb037ae2feb2a8a8ac51aacb3511b52d9 HYCOM-interface/HYCOM (2.3.00-122-gbcf7777)
+ 05a3f7ae291b59a2ab7611a042f2fc99be31dc61 LM4-driver (baseline_change_240904-7-g05a3f7a)
+ c03c4f68816030f726785daf0db6150aa1e9cc6f LM4-driver/LM4 (land_lad2_2021.02)
+ 9c8b26c2d870636f359f2ef62ef775639132b3ba MOM6-interface/MOM6 (dev/master/repository_split_2014.10.10-10723-g9c8b26c2d)
+ 65ef5c73bc7f5663d5688f75c3855d431da4baea MOM6-interface/MOM6/pkg/CVMix-src (65ef5c7)
+ 29e64d652786e1d076a05128c920f394202bfe10 MOM6-interface/MOM6/pkg/GSW-Fortran (29e64d6)
+ 2c7b3bc2a8096f6232020c47507593058795102e NOAHMP-interface/noahmp (v3.7.1-471-g2c7b3bc)
+ 95ffe75a17d65907c643a0ae369a8b7b751910a4 UFSATM (heads/pdc_full)
+ 3256121dc4972d5c78f43f1a16ea1cb118ec6daf UFSATM/ccpp/framework (2025-06-03-dev-12-g3256121)
+ 7e9ddf0b6bb2ec6034049b05447e060115dd8de0 UFSATM/ccpp/physics (EP4-2052-g7e9ddf0b)
+ c62efd27caa26f660edf24232f33f154e608b77a UFSATM/ccpp/physics/physics/MP/TEMPO/TEMPO (c62efd2)
+ 41c5fcd950fed09b8afe186dede266824eca7fd3 UFSATM/ccpp/physics/physics/Radiation/RRTMGP/rte-rrtmgp (41c5fcd)
+ 06fa5e21ccba5e7108aae1fc29cd1535f31d572e UFSATM/fv3/atmos_cubed_sphere (201912_public_release-456-g06fa5e2)
+ 38d2177aef842a5c6abe26ffe876804b95fd9e0a UFSATM/mpas/MPAS-Model (remotes/origin/develop-226-g38d2177a)
+ 8d41f98e66ea858c163a387aaa0c6179851a1466 UFSATM/upp (upp_v10.2.0-331-g8d41f98e)
+-179cae1dd84401cf25d250bd9102e66560a9d328 UFSATM/upp/sorc/libIFI.fd
+-3d35332fe66e3e63a285cc8d96facdf255a33481 UFSATM/upp/sorc/ncep_post.fd/post_gtg.fd
+ b6db1fc588ad7055247128174245615b2c20c242 WW3 (6.07.1-513-gb6db1fc5)
+ 3be9c444ace991b4235e4e978449cc3d3fd0d2d1 fire_behavior (v0.2.0-3-g3be9c44)
+ ae192f119b8614b4476a1b04ba55f6fb93e2953d stochastic_physics (ufs-v2.0.0-298-gae192f1)
+
+
+NOTES:
+[Times](Memory) are at the end of each compile/test in format [MM:SS](Size).
+The first time is for the full script (prep+run+finalize).
+The second time is specifically for the run phase.
+Times/Memory will be empty for failed tests.
+
+BASELINE DIRECTORY: /scratch4/NAGAPE/epic/role-epic/UFS-WM_RT/NEMSfv3gfs/develop-20251204
+COMPARISON DIRECTORY: /scratch4/NCEPDEV/stmp/Wen.Chen/RT_RUNDIRS/Wen.Chen/FV3_RT/rt_2920149
+
+RT.SH OPTIONS USED:
+* (-a) - HPC PROJECT ACCOUNT: fv3-cpu
+* (-l) - USE CONFIG FILE: pdc.conf
+* (-w) - SKIP RESULTS CHECK
+* (-k) - KEEP RUN DIRECTORY
+
+PASS -- COMPILE 'atm_dyn32_intel' [07:12, 05:33] ( 1 warnings 396 remarks )
+PASS -- TEST 'pdc_c384_intel' [13:33, 11:26](2543 MB)
+
+SYNOPSIS:
+Starting Date/Time: 20260108 14:18:24
+Ending Date/Time: 20260108 14:39:09
+Total Time: 00h:20m:48s
+Compiles Completed: 1/1
+Tests Completed: 1/1
+
+NOTES:
+A file 'test_changes.list' was generated but is empty.
+If you are using this log as a pull request verification, please commit 'test_changes.list'.
+
+Result: SUCCESS
+
+====END OF URSA REGRESSION TESTING LOG====
