@@ -3,7 +3,7 @@
 #  url = https://github.com/NOAA-EMC/ufsatm
 #  branch = develop
   url = https://github.com/WChen-NOAA/fv3atm
-  branch = pdc_full
+  branch = pdc_full_gfsv17
 #  url = https://github.com/NOAA-EMC/ufsatm
 #  branch = production/GFS.v17
 [submodule "WW3"]
